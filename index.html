@@ -1,108 +1,509 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Ailton Souza - Voz Premium do Sertanejo. Shows em GO, DF e Brasília">
-  <title>Ailton Souza - Voz Premium do Sertanejo</title>
-  <style>
-    :root {
-      --primary-color: #D4AF37;
-      --secondary-color: #4B0E15;
-      --dark-color: #1A1A1A;
-      --light-color: #F8F8F8;
-      --gray-color: #B3B3B3;
-    }
-    
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(180deg, var(--secondary-color) 0%, var(--dark-color) 100%);
-      color: var(--light-color);
-      text-align: center;
-      padding: 40px 20px;
-      min-height: 100vh;
-    }
-    
-    .container {
-      max-width: 600px;
-      margin: 0 auto;
-    }
-    
-    .profile {
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      border: 4px solid var(--primary-color);
-      object-fit: cover;
-      margin-bottom: 20px;
-    }
-    
-    h1 {
-      font-size: 2rem;
-      color: var(--primary-color);
-      margin: 20px 0 10px;
-    }
-    
-    .subtitle {
-      color: var(--gray-color);
-      font-size: 1.1rem;
-      margin-bottom: 40px;
-      line-height: 1.6;
-    }
-    
-    .link-btn {
-      display: block;
-      background-color: var(--primary-color);
-      color: var(--dark-color);
-      text-decoration: none;
-      padding: 16px;
-      border-radius: 50px;
-      margin: 12px 0;
-      font-weight: 600;
-      transition: all 0.3s ease;
-    }
-    
-    .link-btn:hover {
-      background-color: #B8860B;
-      transform: translateY(-2px);
-    }
-    
-    footer {
-      margin-top: 40px;
-      color: var(--gray-color);
-      line-height: 1.6;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ailton Souza - Cantor para Eventos Premium</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary-dark: #1a1a1a; /* Preto quase absoluto */
+            --color-primary-light: #f8f8f8; /* Branco off-white */
+            --color-secondary-grey: #444444; /* Cinza chumbo */
+            --color-accent-gold: #c2a87c; /* Dourado sutil */
+            --font-main: 'Montserrat', sans-serif;
+            --font-headings: 'Playfair Display', serif;
+        }
 
-    @media (max-width: 480px) {
-      body { padding: 20px 15px; }
-      .profile { width: 150px; height: 150px; }
-      h1 { font-size: 1.7rem; }
-    }
-  </style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-main);
+            line-height: 1.6;
+            color: var(--color-primary-light);
+            background-color: var(--color-primary-dark);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--color-primary-dark);
+            padding: 20px 0;
+            border-bottom: 1px solid var(--color-secondary-grey);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-headings);
+            font-size: 1.8em;
+            font-weight: 700;
+            color: var(--color-accent-gold);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        .logo span {
+            color: var(--color-primary-light);
+            margin-left: 5px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            color: var(--color-primary-light);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--color-accent-gold);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://via.placeholder.com/1920x800/222222/cccccc?text=FOTO+DE+SHOW+PREMIUM') no-repeat center center/cover;
+            height: 80vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-content {
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-family: var(--font-headings);
+            font-size: 4em;
+            margin-bottom: 20px;
+            color: var(--color-primary-light);
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+        }
+
+        .hero p {
+            font-size: 1.5em;
+            margin-bottom: 30px;
+            color: var(--color-primary-light);
+        }
+
+        .btn {
+            background-color: var(--color-accent-gold);
+            color: var(--color-primary-dark);
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 700;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn:hover {
+            background-color: #d4b88e; /* Um dourado ligeiramente mais claro */
+            transform: translateY(-3px);
+        }
+
+        /* Sections General */
+        section {
+            padding: 80px 0;
+        }
+
+        section h2 {
+            font-family: var(--font-headings);
+            font-size: 3em;
+            text-align: center;
+            margin-bottom: 60px;
+            color: var(--color-accent-gold);
+            position: relative;
+        }
+        section h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background-color: var(--color-secondary-grey);
+            margin: 20px auto 0;
+        }
+
+        /* About Section */
+        #sobre .content-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+        #sobre .text-content {
+            flex: 1;
+        }
+        #sobre img {
+            max-width: 400px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+        }
+        #sobre p {
+            margin-bottom: 20px;
+            color: var(--color-primary-light);
+            font-size: 1.1em;
+        }
+
+        /* Media Section */
+        #midia .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        #midia .video-item {
+            background-color: var(--color-secondary-grey);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+        #midia .video-item:hover {
+            transform: translateY(-5px);
+        }
+        #midia .video-item iframe {
+            width: 100%;
+            height: 200px; /* Ajuste conforme necessário */
+            display: block;
+        }
+        #midia .video-item h3 {
+            padding: 15px;
+            font-size: 1.2em;
+            color: var(--color-primary-light);
+            font-weight: 600;
+        }
+
+        /* Tour Dates Section */
+        #agenda .event-list {
+            list-style: none;
+        }
+        #agenda .event-item {
+            background-color: var(--color-secondary-grey);
+            margin-bottom: 20px;
+            padding: 25px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s ease;
+        }
+        #agenda .event-item:hover {
+            background-color: #555;
+        }
+        #agenda .event-info h3 {
+            font-size: 1.5em;
+            color: var(--color-accent-gold);
+            margin-bottom: 5px;
+        }
+        #agenda .event-info p {
+            color: var(--color-primary-light);
+            font-size: 1.1em;
+        }
+        #agenda .event-date {
+            font-size: 1.2em;
+            font-weight: 700;
+            color: var(--color-accent-gold);
+            text-align: right;
+        }
+
+        /* Contact Section */
+        #contato {
+            background-color: var(--color-secondary-grey);
+            padding-top: 60px; /* Ajuste para espaçamento */
+        }
+        #contato h2 {
+            color: var(--color-primary-light);
+            margin-bottom: 40px;
+        }
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .contact-form label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: var(--color-primary-light);
+        }
+        .contact-form input[type="text"],
+        .contact-form input[type="email"],
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #777;
+            border-radius: 5px;
+            background-color: var(--color-primary-dark);
+            color: var(--color-primary-light);
+            font-family: var(--font-main);
+            font-size: 1em;
+        }
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        .contact-form input[type="submit"] {
+            background-color: var(--color-accent-gold);
+            color: var(--color-primary-dark);
+            border: none;
+            padding: 15px 30px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1em;
+            font-weight: 700;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .contact-form input[type="submit"]:hover {
+            background-color: #d4b88e;
+            transform: translateY(-3px);
+        }
+        .contact-info {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .contact-info p {
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        .contact-info a {
+            color: var(--color-accent-gold);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .contact-info a:hover {
+            color: var(--color-primary-light);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--color-primary-dark);
+            color: var(--color-secondary-grey);
+            text-align: center;
+            padding: 40px 0;
+            border-top: 1px solid var(--color-secondary-grey);
+            font-size: 0.9em;
+        }
+        .social-links {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .social-links a {
+            color: var(--color-accent-gold);
+            font-size: 1.5em;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .social-links a:hover {
+            color: var(--color-primary-light);
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.8em;
+            }
+            .hero p {
+                font-size: 1.2em;
+            }
+            nav ul {
+                flex-direction: column;
+                margin-top: 20px;
+                display: none; /* Esconder navegação para mobile por padrão, precisaria de JS para toggle */
+            }
+            nav ul li {
+                margin: 10px 0;
+            }
+            header .container {
+                flex-direction: column;
+            }
+            #sobre .content-wrapper {
+                flex-direction: column;
+                text-align: center;
+            }
+            #sobre img {
+                max-width: 80%;
+            }
+            section h2 {
+                font-size: 2.2em;
+            }
+            .event-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .event-date {
+                margin-top: 10px;
+                text-align: left;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cG9ydHJhaXQlMjBzaW5nZXJ8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60" alt="Ailton Souza" class="profile">
-    
-    <h1>Ailton Souza</h1>
-    <p class="subtitle">Voz Premium do Sertanejo 🎶<br>Shows exclusivos em GO | DF | Brasília</p>
+    <header>
+        <div class="container">
+            <a href="#" class="logo">Ailton<span>Souza</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#midia">Mídia</a></li>
+                    <li><a href="#agenda">Agenda</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-    <a href="https://wa.me/5561999999999" class="link-btn">🎟️ Contrate Seu Show</a>
-    <a href="https://youtube.com/@cantorailtonsouza" class="link-btn">🎥 Canal no YouTube</a>
-    <a href="https://instagram.com/cantorailtonsouza" class="link-btn">📸 Instagram</a>
-    <a href="https://tiktok.com/@cantorailtonsouza" class="link-btn">🎬 TikTok</a>
-    <a href="https://open.spotify.com/artist/seulink" class="link-btn">🎧 Spotify</a>
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Sua Música, Seu Momento. Inesquecível.</h1>
+                <p>Ailton Souza: A voz perfeita para transformar seu evento premium em uma experiência única.</p>
+                <a href="#contato" class="btn">Solicitar Orçamento</a>
+            </div>
+        </section>
+
+        <section id="sobre">
+            <div class="container">
+                <h2>Sobre</h2>
+                <div class="content-wrapper">
+                    <div class="text-content">
+                        <p>Com uma carreira sólida e uma paixão inabalável pela música, Ailton Souza é a escolha ideal para quem busca excelência e sofisticação. Especializado em eventos premium, ele oferece um repertório versátil e uma interpretação emocionante que se adapta perfeitamente a casamentos, jantares corporativos e celebrações exclusivas.</p>
+                        <p>Sua voz marcante e a habilidade de criar a atmosfera perfeita garantem que cada apresentação seja mais do que um show, mas sim uma experiência memorável. Ailton Souza tem o compromisso de entregar não apenas música, mas emoção e profissionalismo em cada nota.</p>
+                    </div>
+                    <img src="https://via.placeholder.com/400x500/333333/dddddd?text=AILTON+SOUZA" alt="Ailton Souza no palco">
+                </div>
+            </div>
+        </section>
+
+        <section id="midia">
+            <div class="container">
+                <h2>Mídia</h2>
+                <div class="video-grid">
+                    <div class="video-item">
+                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <h3>Momento Casamento: Clássicos Inesquecíveis</h3>
+                    </div>
+                    <div class="video-item">
+                        <iframe src="https://www.youtube.com/embed/videoseries?list=PLx0sYbCqOb8T3Y4-W58F0Kq23Xw7x_8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <h3>Show Acústico: Voz e Violão</h3>
+                    </div>
+                    <div class="video-item">
+                        <iframe src="https://www.youtube.com/embed/watch?v=YOUR_VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <h3>Performance em Evento Corporativo</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="agenda">
+            <div class="container">
+                <h2>Próximos Shows</h2>
+                <ul class="event-list">
+                    <li class="event-item">
+                        <div class="event-info">
+                            <h3>Casamento Sra. e Sr. Silva</h3>
+                            <p>Evento Privado - São Paulo, SP</p>
+                        </div>
+                        <span class="event-date">15 JUL | 2024</span>
+                    </li>
+                    <li class="event-item">
+                        <div class="event-info">
+                            <h3>Jantar de Gala Corporativo</h3>
+                            <p>Hotel Fasano - Rio de Janeiro, RJ</p>
+                        </div>
+                        <span class="event-date">02 AGO | 2024</span>
+                    </li>
+                    <li class="event-item">
+                        <div class="event-info">
+                            <h3>Aniversário Exclusivo</h3>
+                            <p>Evento Privado - Campinas, SP</p>
+                        </div>
+                        <span class="event-date">20 SET | 2024</span>
+                    </li>
+                    <li class="event-item">
+                        <div class="event-info">
+                            <h3>Reserva de Natal</h3>
+                            <p>Disponível para Eventos de Fim de Ano</p>
+                        </div>
+                        <span class="event-date">DEZ | 2024</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="contato">
+            <div class="container">
+                <h2>Entre em Contato</h2>
+                <form class="contact-form">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" required>
+
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="telefone">Telefone (opcional):</label>
+                    <input type="text" id="telefone" name="telefone">
+
+                    <label for="evento">Tipo de Evento:</label>
+                    <input type="text" id="evento" name="evento">
+
+                    <label for="mensagem">Mensagem:</label>
+                    <textarea id="mensagem" name="mensagem" required></textarea>
+
+                    <input type="submit" value="Enviar Mensagem">
+                </form>
+                <div class="contact-info">
+                    <p>Ou, para um atendimento mais rápido:</p>
+                    <p>WhatsApp: <a href="https://wa.me/5511999998888" target="_blank">(11) 99999-8888</a></p>
+                    <p>E-mail: <a href="mailto:contato@ailtonsouza.com.br">contato@ailtonsouza.com.br</a></p>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <footer>
-      "Energia, emoção e autenticidade no palco."<br>
-      Sertanejo Moderno com Alma Raiz 🌾
+        <div class="container">
+            <p>&copy; 2024 Ailton Souza. Todos os direitos reservados.</p>
+            <div class="social-links">
+                <a href="https://instagram.com/cantorailtonsouza" target="_blank" aria-label="Instagram"><img src="https://img.icons8.com/ios-glyphs/30/c2a87c/instagram-new.png" alt="Instagram"></a>
+                <a href="https://youtube.com/yourchannel" target="_blank" aria-label="YouTube"><img src="https://img.icons8.com/ios-glyphs/30/c2a87c/youtube-play--v1.png" alt="YouTube"></a>
+                <a href="https://facebook.com/yourpage" target="_blank" aria-label="Facebook"><img src="https://img.icons8.com/ios-glyphs/30/c2a87c/facebook.png" alt="Facebook"></a>
+            </div>
+        </div>
     </footer>
-  </div>
 </body>
 </html>
