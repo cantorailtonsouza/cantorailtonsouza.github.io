@@ -6,14 +6,15 @@
     <title>Ailton Souza: Cantor para Casamento, Eventos Corporativos e Festas de Luxo</title>
     <meta name="description" content="Contrate Ailton Souza. Voz e repertório para Casamentos, Eventos Corporativos e Festas Exclusivas. Orçamento de Música Ao Vivo (Sertanejo, Pop, Clássicos).">
     <meta name="keywords" content="cantor sertanejo para casamento, música ao vivo luxo, show corporativo, festa de 15 anos premium, contratar cantor Brasília, cantor evento DF">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght[email protected]&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         :root {
             --color-primary-dark: #1a1a1a;
             --color-primary-light: #f8f8f8;
             --color-secondary-grey: #444444;
-            --color-accent-gold: #c2a87c;
+            --color-accent-gold: #D4AF37; /* NOVA COR: Dourado principal */
+            --color-accent-gold-hover: #f1c40f; /* Um dourado mais claro para o hover */
             --color-whatsapp: #25d366; /* Cor do WhatsApp */
             --font-main: 'Montserrat', sans-serif;
             --font-headings: 'Playfair Display', serif;
@@ -90,7 +91,7 @@
         }
 
         nav ul li a:hover {
-            color: var(--color-accent-gold);
+            color: var(--color-accent-gold); /* Usa a nova cor dourada */
         }
 
         .menu-toggle {
@@ -112,832 +113,550 @@
             align-items: center;
             text-align: center;
             position: relative;
-            background-attachment: fixed;
-            background-size: cover;
-            background-position: center center;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(ellipse at center, transparent 30%, rgba(26, 26, 26, 0.6) 100%);
-            pointer-events: none;
         }
 
         .hero-content {
-            z-index: 1;
-            position: relative;
+            z-index: 10;
         }
-
-        /* Nova logo no Hero */
-        .hero-logo-img {
-            height: 120px; /* Tamanho médio para desktop */
-            width: auto;
-            margin-bottom: 30px; /* Espaçamento entre a logo e o texto */
-            transition: transform 0.3s ease;
-            filter: drop-shadow(0 0 10px rgba(0,0,0,0.7)); /* Sombra para destacar */
-        }
-
-        .hero-logo-img:hover {
-            transform: scale(1.08); /* Suavemente maior ao passar o mouse */
-        }
-
 
         .hero h1 {
             font-family: var(--font-headings);
-            font-size: 3em; /* Reduzido de 3.5em para 3em */
-            margin-bottom: 30px;
-            color: var(--color-primary-light);
-            text-shadow: 2px 2px 12px rgba(0,0,0,0.8);
+            font-size: 3.5em;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--color-accent-gold); /* Usa a nova cor dourada */
         }
 
-        .social-icons-hero {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
+        .hero p {
+            font-size: 1.4em;
+            font-weight: 300;
             margin-bottom: 40px;
         }
 
-        .social-icon {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 60px;
-            height: 60px;
-            background-color: var(--color-secondary-grey);
-            border-radius: 50%;
-            color: var(--color-primary-light);
-            text-decoration: none;
-            font-size: 1.5em;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-        }
-
-        .social-icon:hover {
-            background-color: var(--color-accent-gold);
-            color: var(--color-primary-dark);
-            transform: translateY(-5px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
-        }
-
-        .btn-group {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap; 
-        }
-
-        .btn {
-            background-color: var(--color-accent-gold);
+        .cta-button {
+            display: inline-block;
+            background-color: var(--color-accent-gold); /* Usa a nova cor dourada */
             color: var(--color-primary-dark);
             padding: 15px 30px;
             text-decoration: none;
-            border-radius: 5px;
             font-weight: 700;
+            border-radius: 5px;
             transition: background-color 0.3s ease, transform 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            display: inline-block;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-            white-space: nowrap; 
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
         }
 
-        .btn:hover {
-            background-color: #d4b88e;
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
-        }
-
-        /* Estilo do Botão Principal (WhatsApp) */
-        .btn-whatsapp {
-            background-color: var(--color-whatsapp);
-            color: white;
-            padding: 18px 40px;
-            font-size: 1.2em;
-        }
-
-        .btn-whatsapp:hover {
-            background-color: #128c7e;
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
-        }
-
-        /* Estilo do Botão Press Kit */
-        .btn-presskit {
-            background-color: var(--color-accent-gold);
+        .cta-button:hover {
+            background-color: var(--color-accent-gold-hover);
+            transform: translateY(-2px);
             color: var(--color-primary-dark);
-            padding: 15px 35px;
-            font-size: 1.1em;
-            margin-top: 30px; 
-        }
-        .btn-presskit:hover {
-            background-color: #d4b88e;
         }
 
-
-        a:focus, button:focus, input:focus {
-            outline: 2px solid var(--color-accent-gold);
-            outline-offset: 2px;
-        }
-
+        /* --- Seções Gerais --- */
         section {
             padding: 80px 0;
-            background-color: var(--color-primary-dark);
+            border-bottom: 1px solid var(--color-secondary-grey);
         }
-        
-        /* ESTILO NOVO: SEÇÃO DE VÍDEO DE DESTAQUE */
-        #video-destaque {
-            padding: 40px 0;
-            background-color: #0d0d0d; 
-        }
-        .video-wrapper {
-            position: relative;
-            padding-bottom: 56.25%; 
-            height: 0;
-            overflow: hidden;
-            max-width: 100%;
-        }
-        .video-wrapper iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
-            border-radius: 8px; 
-        }
-        
-        /* FIM DO ESTILO DE VÍDEO DE DESTAQUE */
-
 
         section h2 {
             font-family: var(--font-headings);
-            font-size: 3em;
+            font-size: 2.5em;
             text-align: center;
             margin-bottom: 60px;
-            color: var(--color-accent-gold);
             position: relative;
+            color: var(--color-accent-gold); /* Usa a nova cor dourada */
         }
+
         section h2::after {
             content: '';
-            display: block;
             width: 80px;
             height: 3px;
-            background-color: var(--color-secondary-grey);
-            margin: 20px auto 0;
+            background-color: var(--color-accent-gold); /* Usa a nova cor dourada */
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
         }
 
-        #sobre .content-wrapper {
+        /* --- Agenda (Calendar) --- */
+        #agenda .event-list {
             display: flex;
-            align-items: center;
-            gap: 40px;
-        }
-        #sobre .text-content {
-            flex: 1;
-        }
-        #sobre img {
-            max-width: 400px;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-        }
-        #sobre p {
-            margin-bottom: 20px;
-            color: var(--color-primary-light);
-            font-size: 1.1em;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
         }
 
-        #midia .video-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        #midia .video-item {
+        .event-card {
             background-color: var(--color-secondary-grey);
             border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 350px;
             transition: transform 0.3s ease;
         }
-        #midia .video-item:hover {
+
+        .event-card:hover {
             transform: translateY(-5px);
         }
-        #midia .video-item iframe {
-            width: 100%;
-            height: 200px;
-            display: block;
-        }
-        #midia .video-item h3 {
+
+        .event-header {
+            background-color: var(--color-accent-gold); /* Usa a nova cor dourada */
+            color: var(--color-primary-dark);
             padding: 15px;
-            font-size: 1.2em;
-            color: var(--color-primary-light);
-            font-weight: 600;
-        }
-        
-        #contratante {
             text-align: center;
-            background-color: #2b2b2b; 
-        }
-        #contratante p {
-            font-size: 1.1em;
-            margin-bottom: 30px;
-        }
-        
-        /* ESTILOS DA AGENDA (LISTA) */
-        #agenda .event-list {
-            list-style: none;
-            padding: 0;
-            max-width: 700px;
-            margin: 0 auto;
         }
 
-        #agenda .event-item {
-            background-color: #2b2b2b;
-            margin-bottom: 20px;
+        .event-header .date-month {
+            font-size: 0.9em;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .event-header .date-day {
+            font-family: var(--font-headings);
+            font-size: 2.5em;
+            line-height: 1;
+        }
+
+        .event-details {
             padding: 20px;
-            border-radius: 8px;
+        }
+
+        .event-details h3 {
+            font-family: var(--font-main);
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            color: var(--color-primary-light);
+        }
+
+        .event-details p {
+            font-size: 0.9em;
+            margin-bottom: 5px;
+            color: #ccc;
+        }
+
+        .event-details .location {
+            font-style: italic;
+            color: var(--color-accent-gold); /* Usa a nova cor dourada */
+        }
+
+        #agenda .loading-message,
+        #agenda .no-events {
+            text-align: center;
+            font-size: 1.2em;
+            color: var(--color-accent-gold); /* Usa a nova cor dourada */
+        }
+
+        /* --- Contato --- */
+        #contato .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .contact-item {
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
-            transition: background-color 0.3s ease;
-        }
-        
-        #agenda .event-item:hover {
-            background-color: #3a3a3a;
-        }
-
-        #agenda .event-date-location {
-            flex-grow: 1;
-        }
-        
-        #agenda .event-date {
-            font-size: 1.2em;
-            font-weight: 700;
-            color: var(--color-accent-gold);
-            margin-bottom: 5px;
-        }
-
-        #agenda .event-location {
-            font-size: 1em;
+            gap: 10px;
             color: var(--color-primary-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
         }
 
-        #agenda .event-time {
-            font-size: 1em;
-            font-weight: 600;
-            color: #ddd;
-            padding-left: 20px;
-            white-space: nowrap; /* Não quebra a hora */
+        .contact-item i {
+            font-size: 1.5em;
+            color: var(--color-accent-gold); /* Usa a nova cor dourada */
         }
-        /* FIM DOS ESTILOS DA AGENDA */
 
-        #contato {
-            background-color: var(--color-secondary-grey);
-            padding-top: 60px;
+        .contact-item:hover {
+            color: var(--color-accent-gold); /* Usa a nova cor dourada */
         }
-        #contato h2 {
-            color: var(--color-primary-light);
-            margin-bottom: 40px;
-        }
-        .contact-form {
+
+        #contato form {
             max-width: 600px;
             margin: 0 auto;
         }
-        .contact-form label {
+
+        #contato form label {
             display: block;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
             font-weight: 600;
-            color: var(--color-primary-light);
         }
-        .contact-form input[type="text"],
-        .contact-form input[type="email"],
-        .contact-form textarea {
+
+        #contato form input[type="text"],
+        #contato form input[type="email"],
+        #contato form textarea {
             width: 100%;
             padding: 12px;
             margin-bottom: 20px;
-            border: 1px solid #777;
-            border-radius: 5px;
+            border: 1px solid var(--color-secondary-grey);
             background-color: var(--color-primary-dark);
             color: var(--color-primary-light);
-            font-family: var(--font-main);
-            font-size: 1em;
-        }
-        .contact-form textarea {
+            border-radius: 4px;
             resize: vertical;
-            min-height: 120px;
-        }
-        .contact-form input[type="submit"] {
-            background-color: var(--color-accent-gold);
-            color: var(--color-primary-dark);
-            border: none;
-            padding: 15px 30px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1.1em;
-            font-weight: 700;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
-        .contact-form input[type="submit"]:hover {
-            background-color: #d4b88e;
-            transform: translateY(-3px);
-        }
-        .contact-info {
-            text-align: center;
-            margin-top: 40px;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        .contact-info p {
-            margin-bottom: 10px;
-            font-size: 1.1em;
-        }
-        .contact-info a {
-            color: var(--color-accent-gold);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        .contact-info a:hover {
-            color: var(--color-primary-light);
         }
 
+        #contato form textarea {
+            min-height: 150px;
+        }
+
+        #contato form button[type="submit"] {
+            width: 100%;
+            border: none;
+        }
+
+        /* --- Footer --- */
         footer {
-            background-color: var(--color-primary-dark);
-            color: var(--color-secondary-grey);
+            background-color: var(--color-secondary-grey);
+            color: #ddd;
+            padding: 40px 0 20px;
             text-align: center;
-            padding: 40px 0;
-            border-top: 1px solid var(--color-secondary-grey);
             font-size: 0.9em;
         }
-        .social-links {
-            margin-top: 20px;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-        .social-links a {
-            color: var(--color-accent-gold);
+
+        .social-icons a {
+            color: var(--color-primary-light);
             font-size: 1.5em;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: var(--color-accent-gold); /* Usa a nova cor dourada */
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 15px 0;
+        }
+
+        .footer-links li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        .footer-links a {
+            color: #ddd;
             text-decoration: none;
             transition: color 0.3s ease;
         }
-        .social-links a:hover {
-            color: var(--color-primary-light);
+
+        .footer-links a:hover {
+            color: var(--color-accent-gold); /* Usa a nova cor dourada */
         }
 
-        /* ================================================= */
-        /* MEDIA QUERIES PARA RESPONSIVIDADE OTIMIZADA */
-        /* ================================================= */
+        .copyright {
+            margin-top: 20px;
+        }
 
+        /* --- Botão WhatsApp Flutuante --- */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: var(--color-whatsapp);
+            color: #fff;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 15px var(--color-whatsapp);
+        }
+
+        /* --- Media Queries (Responsividade) --- */
         @media (max-width: 768px) {
-            .menu-toggle {
-                display: block;
-                position: absolute;
-                right: 20px;
-                top: 20px;
+            .hero {
+                height: 60vh;
             }
-            
-            nav ul {
-                flex-direction: column;
-                margin-top: 20px;
-                display: none;
+
+            .hero h1 {
+                font-size: 2.5em;
+            }
+
+            .hero p {
+                font-size: 1.1em;
+            }
+
+            /* Navegação Mobile */
+            nav {
+                position: absolute;
+                top: 80px;
+                left: 0;
                 width: 100%;
+                background-color: var(--color-primary-dark);
+                border-top: 1px solid var(--color-secondary-grey);
+                display: none;
+                flex-direction: column;
                 text-align: center;
-                background-color: rgba(26, 26, 26, 0.95); 
                 padding: 10px 0;
             }
-            
-            nav ul.show {
+
+            nav.active {
                 display: flex;
             }
-            
+
+            nav ul {
+                flex-direction: column;
+                padding: 0;
+            }
+
             nav ul li {
                 margin: 10px 0;
             }
-            
-            header .container {
-                flex-direction: column;
-                align-items: flex-start; 
-            }
-            
-            .logo-img {
-                height: 40px;
-            }
-            
-            .hero {
-                background-attachment: scroll;
-                height: 70vh;
-                background: linear-gradient(rgba(26, 26, 26, 0.2), rgba(26, 26, 26, 0.3)), 
-                            url('https://i.postimg.cc/2jwqyM7H/Arte-do-Site-2.png') 
-                            no-repeat center center/cover;
-            }
-            
-            .hero-logo-img {
-                height: 90px; /* Reduz tamanho para mobile */
-                margin-bottom: 20px;
+
+            .menu-toggle {
+                display: block;
             }
 
-            .hero h1 {
-                font-size: 2.5em; /* Ajuste para mobile */
+            .contact-info {
+                flex-direction: column;
             }
-            
-            .social-icons-hero {
-                gap: 15px;
-                margin-bottom: 30px;
-            }
-            
-            .social-icon {
+
+            .whatsapp-float {
                 width: 50px;
                 height: 50px;
-                font-size: 1.3em;
-            }
-            
-            .btn-whatsapp {
-                width: 80%; 
-            }
-
-            #sobre .content-wrapper {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            #sobre img {
-                max-width: 80%;
-            }
-            
-            section h2 {
-                font-size: 2.2em;
-            }
-            
-            #midia .video-grid {
-                grid-template-columns: 1fr; 
-            }
-            
-            .btn-presskit {
-                margin-top: 20px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .logo-img {
-                height: 35px;
-            }
-            
-            .hero-logo-img {
-                height: 70px; /* Mais ajuste para telas pequenas */
-            }
-
-            .hero h1 {
-                font-size: 2em;
-            }
-            
-            .social-icons-hero {
-                gap: 10px;
-            }
-            
-            .social-icon {
-                width: 45px;
-                height: 45px;
-                font-size: 1.2em;
+                bottom: 20px;
+                right: 20px;
+                font-size: 25px;
             }
         }
     </style>
 </head>
 <body>
+
+    <a href="https://wa.me/5561999999999?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20o%20show%20do%20Cantor%20Ailton%20Souza." class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
     <header>
         <div class="container">
             <a href="#" class="logo">
-                <img src="https://i.postimg.cc/VsVJXM3c/AILTON-SOUZA-IDENTIDADE-VISUAL-AS-BRANCO-2021.png" 
-                    alt="Ailton Souza" 
-                    class="logo-img">
+                <img src="https://i.postimg.cc/Qtx1zD1g/Logo-Ailton-Souza.png" alt="Logo Ailton Souza" class="logo-img">
             </a>
-            <button class="menu-toggle" aria-label="Abrir menu">☰</button>
-            <nav>
+            <button class="menu-toggle" aria-label="Abrir Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav id="navbar">
                 <ul>
-                    <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="#midia">Mídia</a></li>
-                    <li><a href="#contratante">Contratante</a></li>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#perfil">Perfil</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
                     <li><a href="#agenda">Agenda</a></li>
+                    <li><a href="#galeria">Galeria</a></li>
                     <li><a href="#contato">Contato</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <main role="main">
-        <section class="hero">
+    <main>
+        <section id="home" class="hero">
             <div class="hero-content">
-                
-<img src="https://i.postimg.cc/VsVJXM3c/AILTON-SOUZA-IDENTIDADE-VISUAL-AS-BRANCO-2021.png" 
-                     alt="Ailton Souza - Logo" 
-                     class="hero-logo-img">
-
-                <h1>Sua Música, Seu Momento. Inesquecível.</h1>
-                
-                <div class="social-icons-hero">
-                    <a href="https://instagram.com/cantorailtonsouza" class="social-icon" target="_blank" aria-label="Instagram">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="https://facebook.com/cantorailtonsouza" class="social-icon" target="_blank" aria-label="Facebook">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="https://open.spotify.com/intl-pt/artist/1FMGSVblgyS6fZWb8unucG" class="social-icon" target="_blank" aria-label="Spotify">
-                        <i class="fab fa-spotify"></i>
-                    </a>
-                    <a href="https://www.youtube.com/ailtonsouza" class="social-icon" target="_blank" aria-label="YouTube">
-                        <i class="fab fa-youtube"></i>
-                    </a>
-                </div>
-                
-                <div class="btn-group">
-                    <a href="https://wa.me/5561993594339?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20com%20Ailton%20Souza%20para%20o%20meu%20evento." 
-                       class="btn btn-whatsapp" 
-                       target="_blank" 
-                       aria-label="Fale conosco via WhatsApp">
-                       <i class="fab fa-whatsapp"></i> CONTRATE AGORA
-                    </a>
-                </div>
+                <h1>Ailton Souza</h1>
+                <p>A voz perfeita para transformar seu evento em uma experiência inesquecível de luxo e emoção.</p>
+                <a href="#contato" class="cta-button">Solicitar Orçamento</a>
             </div>
         </section>
 
-        <section id="video-destaque">
+        <section id="perfil">
             <div class="container">
-                <div class="video-wrapper">
-                    <iframe src="https://www.youtube-nocookie.com/embed/Kdvv0w5_OqM?rel=0&autoplay=0&showinfo=0&controls=1" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowfullscreen>
-                    </iframe>
+                <h2>O Cantor</h2>
+                <p style="max-width: 800px; margin: 0 auto 40px; text-align: center;">
+                    Ailton Souza é reconhecido por sua versatilidade e presença de palco sofisticada. Com um repertório que transita suavemente entre o sertanejo acústico, o pop romântico e os grandes clássicos nacionais e internacionais, ele garante a trilha sonora ideal para momentos que exigem elegância e alta qualidade musical.
+                </p>
                 </div>
-            </div>
-        </section>
-        <article id="sobre">
-            <div class="container">
-                <header>
-                    <h2>Sobre</h2>
-                </header>
-                <div class="content-wrapper">
-                    <div class="text-content">
-                        <p>Com uma carreira sólida e uma paixão inabalável pela música, Ailton Souza é a escolha ideal para quem busca excelência e sofisticação. Especializado em eventos premium, ele oferece um repertório versátil e uma interpretação emocionante que se adapta perfeitamente a casamentos, jantares corporativos e celebrações exclusivas.</p>
-                        <p>Sua voz marcante e a habilidade de criar a atmosfera perfeita garantem que cada apresentação seja mais do que um show, mas sim uma experiência memorável. Ailton Souza tem o compromisso de entregar não apenas música, mas emoção e profissionalismo em cada nota.</p>
-                    </div>
-                    <img src="https://via.placeholder.com/400x500/333333/dddddd?text=FOTO+PROFISSIONAL+AILTON" alt="Ailton Souza no palco em um evento premium">
-                </div>
-            </div>
-        </article>
-
-        <section id="midia">
-            <div class="container">
-                <h2>Mídia</h2>
-                <p style="text-align: center; margin-bottom: 40px;">Conheça meu trabalho, assista meus vídeos. </p>
-                <div class="video-grid">
-                    <div class="video-item">
-                        <iframe src="https://www.youtube.com/embed/AmTehR-K1tk?si=3KZNCiEcxJ27jS10" frameborder="0" allowfullscreen></iframe>
-                        <h3>Véio Milionário</h3>
-                    </div>
-                    <div class="video-item">
-                        <iframe src="https://www.youtube.com/embed/RGEjTbVpCI8?si=ZLseC6FSJhliqkBn" frameborder="0" allowfullscreen></iframe>
-                        <h3>Saudade Maquiada</h3>
-                    </div>
-                    <div class="video-item">
-                        <iframe src="https://www.youtube.com/embed/GzEtiWjHnZo?si=jX6G9vZW2zDq_i6h" frameborder="0" allowfullscreen></iframe>
-                        <h3>Acústico Na Rua de Casa</h3>
-                    </div>
-                </div>
-            </div>
         </section>
 
-        <section id="contratante">
+        <section id="servicos">
             <div class="container">
-                <h2>Contratante</h2>
-                <p>Informações técnicas e material de apoio exclusivos para produtores, assessores e organizadores de eventos.</p>
-                
-                <a href="https://drive.google.com/drive/folders/1BQ-M8MiqRA17wYkyYJ7L11n1dmwCQK4y?usp=drive_link" 
-                   class="btn btn-presskit" 
-                   target="_blank" 
-                   aria-label="Acessar Press Kit e Material do Artista">
-                    <i class="fas fa-file-alt"></i> Press Kit - Ailton Souza
-                </a>
-                <p style="font-size: 0.9em; margin-top: 15px; color: #aaa;">(Inclui rider técnico, fotos em alta resolução e biografia para imprensa.)</p>
-            </div>
+                <h2>Experiências Exclusivas</h2>
+                </div>
         </section>
 
         <section id="agenda">
             <div class="container">
-                <h2>Próximos Shows</h2>
-                
-                <ul id="dynamic-event-list" class="event-list">
-                    <li class="event-item">
-                        <div class="event-date-location">
-                            <div class="event-date">Carregando Agenda...</div>
-                            <div class="event-location">Aguarde, conectando ao Google Calendar.</div>
-                        </div>
-                    </li>
-                </ul>
-
+                <h2>Próximos Shows e Eventos</h2>
+                <div id="event-list-container" class="event-list">
+                    <p class="loading-message">Carregando agenda...</p>
+                    </div>
             </div>
+        </section>
+
+        <section id="galeria">
+            <div class="container">
+                <h2>Momentos Inesquecíveis</h2>
+                </div>
         </section>
 
         <section id="contato">
             <div class="container">
-                <h2>Entre em Contato</h2>
-                <form class="contact-form">
-                    <label for="nome">Nome:</label>
-                    <input type="text" id="nome" name="nome" required>
-
-                    <label for="email">E-mail:</label>
-                    <input type="email" id="email" name="email" required>
-
-                    <label for="telefone">Telefone (opcional):</label>
-                    <input type="text" id="telefone" name="telefone">
-
-                    <label for="evento">Tipo de Evento (Obrigatório):</label>
-                    <input type="text" id="evento" name="evento" placeholder="Ex: Casamento, Evento Corporativo, Aniversário" required>
-
-                    <label for="mensagem">Mensagem:</label>
-                    <textarea id="mensagem" name="mensagem" placeholder="Data/Mês do evento e local (Cidade/Estado)." required></textarea>
-
-                    <input type="submit" value="Enviar Mensagem">
-                </form>
+                <h2>Fale Conosco</h2>
                 <div class="contact-info">
-                    <p>Ou, para um atendimento mais rápido e contratação imediata:</p>
-                    <p>WhatsApp: <a href="https://wa.me/5561993594339" target="_blank">(61) 99359-4339</a></p>
-                    <p>E-mail: <a href="mailto:cantorailtonsouza@gmail.com">cantorailtonsouza@gmail.com</a></p>
+                    <a href="https://wa.me/5561999999999" target="_blank" class="contact-item">
+                        <i class="fab fa-whatsapp"></i> (61) 99999-9999
+                    </a>
+                    <a href="mailto:contato@ailtonsouza.com" class="contact-item">
+                        <i class="fas fa-envelope"></i> contato@ailtonsouza.com
+                    </a>
+                    <a href="https://instagram.com/cantorailtonsouza" target="_blank" class="contact-item">
+                        <i class="fab fa-instagram"></i> @cantorailtonsouza
+                    </a>
                 </div>
+                <p style="text-align: center; margin-bottom: 30px;">
+                    Preencha o formulário para solicitar um orçamento detalhado e personalizado.
+                </p>
+                <form action="SEU_ENDPOINT_DE_FORMULARIO" method="POST">
+                    <label for="nome">Nome Completo</label>
+                    <input type="text" id="nome" name="nome" required>
+                    
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" required>
+                    
+                    <label for="telefone">Telefone / WhatsApp</label>
+                    <input type="text" id="telefone" name="telefone" required>
+                    
+                    <label for="mensagem">Detalhes do Evento (Data, Local, Tipo)</label>
+                    <textarea id="mensagem" name="mensagem" required></textarea>
+                    
+                    <button type="submit" class="cta-button">Enviar Orçamento</button>
+                </form>
             </div>
         </section>
     </main>
 
     <footer>
         <div class="container">
-            <p>© 2024 Ailton Souza. Todos os direitos reservados.</p>
-            <div class="social-links">
-                <a href="https://instagram.com/cantorailtonsouza" target="_blank" aria-label="Instagram">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="https://facebook.com/yourpage" target="_blank" aria-label="Facebook">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="https://spotify.com/yourprofile" target="_blank" aria-label="Spotify">
-                    <i class="fab fa-spotify"></i>
-                </a>
-                <a href="https://youtube.com/yourchannel" target="_blank" aria-label="YouTube">
-                    <i class="fab fa-youtube"></i>
-                </a>
+            <div class="social-icons">
+                <a href="https://instagram.com/cantorailtonsouza" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://youtube.com/seu-canal" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="https://tiktok.com/@cantorailtonsouza" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
             </div>
+            <ul class="footer-links">
+                <li><a href="#perfil">Quem Somos</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#">Política de Privacidade</a></li>
+            </ul>
+            <p class="copyright">&copy; 2025 Ailton Souza. Todos os direitos reservados.</p>
         </div>
     </footer>
 
     <script>
-        // Configurações da API do Google Calendar
-        const API_KEY = 'AIzaSyCraxjn4kA2Z-P3vvVwr_SHZAqTnGbkNaM'; // <<< NOVA CHAVE DE API INSERIDA
-        const CALENDAR_ID = 'etb150ebv2gqid9rtt51u708m8@group.calendar.google.com';
-        const MAX_EVENTS = 10;
-        
-        const eventList = document.getElementById('dynamic-event-list');
+        // Variáveis da API do Google Calendar (Chave e ID do Calendário)
+        const apiKey = 'AIzaSyCraxjn4kA2Z-P3vvVwr_SHZAqTnGbkNaM';
+        const calendarId = 'c_0678d8a572a912662c191a329d479153303c73449177114b746a848a60965d1b@group.calendar.google.com'; // ID do calendário público
 
-        // Função para formatar a data (Dia/Mês/Ano)
+        // Elemento onde os eventos serão exibidos
+        const eventListContainer = document.getElementById('event-list-container');
+
+        // Função para formatar data e hora
         function formatDate(dateString) {
-            const options = { weekday: 'short', day: 'numeric', month: 'long', year: 'numeric' };
+            const options = { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' };
             const date = new Date(dateString);
             return date.toLocaleDateString('pt-BR', options);
         }
-
-        // Função para formatar a hora (HH:MM)
-        function formatTime(dateTimeString) {
-            if (!dateTimeString) return '';
-            const date = new Date(dateTimeString);
-            // Verifica se é um evento de dia inteiro (all-day event)
-            if (dateTimeString.length === 10) { // e.g., '2025-10-30'
-                return 'Dia Inteiro';
-            }
-            // Formata hora normal
-            const options = { hour: '2-digit', minute: '2-digit', hour12: false, timeZone: 'America/Sao_Paulo' };
-            return date.toLocaleTimeString('pt-BR', options);
+        
+        // Função para formatar o cartão de evento
+        function formatCardDate(dateString) {
+            const date = new Date(dateString);
+            const day = date.getDate();
+            const month = date.toLocaleDateString('pt-BR', { month: 'short' }).toUpperCase().replace('.', '');
+            return { day, month };
         }
 
-        // Função principal para buscar e exibir os eventos
-        async function fetchAndDisplayEvents() {
-            // URL da API para buscar eventos futuros, ordenados por data
-            const now = new Date().toISOString();
-            const url = `https://www.googleapis.com/calendar/v3/calendars/${CALENDAR_ID}/events?key=${API_KEY}&timeMin=${now}&singleEvents=true&orderBy=startTime&maxResults=${MAX_EVENTS}`;
+        // Função para buscar os eventos
+        async function fetchUpcomingEvents() {
+            // Define o início da busca para o momento atual (agora)
+            const timeMin = new Date().toISOString();
+            
+            // URL da API do Google Calendar
+            // ADICIONADO: &maxResults=5 para limitar a 5 eventos
+            const calendarUrl = `https://www.googleapis.com/calendar/v3/calendars/${calendarId}/events?key=${apiKey}&timeMin=${timeMin}&singleEvents=true&orderBy=startTime&maxResults=5`;
 
             try {
-                const response = await fetch(url);
-                if (!response.ok) {
-                    // Tenta ler o erro do corpo da resposta
-                    const errorText = await response.text();
-                    // Lança o erro para o bloco catch
-                    throw new Error(`HTTP Error ${response.status}: ${errorText}`);
-                }
+                const response = await fetch(calendarUrl);
                 const data = await response.json();
-                
-                // Limpa o estado de "carregando"
-                eventList.innerHTML = '';
 
                 if (data.items && data.items.length > 0) {
-                    data.items.forEach(event => {
-                        const startDateTime = event.start.dateTime || event.start.date;
-                        
-                        // Ignora eventos que não têm data de início, são cancelados ou têm visibilidade privada
-                        if (!startDateTime || event.status === 'cancelled' || event.visibility === 'private') return;
+                    eventListContainer.innerHTML = ''; // Limpa a mensagem de carregamento
 
-                        const dateFormatted = formatDate(startDateTime);
-                        const timeFormatted = formatTime(startDateTime);
-                        const locationText = event.location || 'Local não informado';
+                    data.items.forEach(event => {
+                        const dateInfo = formatCardDate(event.start.dateTime || event.start.date);
+                        const startDateTime = formatDate(event.start.dateTime || event.start.date);
+                        const location = event.location || 'Local não especificado';
+                        const description = event.summary;
                         
-                        // O campo 'summary' (título do evento) será usado como o Título/Data Principal
-                        const eventTitle = event.summary || 'Evento Sem Título';
-                        
-                        // Cria o elemento da lista no formato desejado
-                        const listItem = document.createElement('li');
-                        listItem.className = 'event-item';
-                        listItem.innerHTML = `
-                            <div class="event-date-location">
-                                <div class="event-date">${eventTitle} (${dateFormatted})</div>
-                                <div class="event-location"><i class="fas fa-map-marker-alt"></i> ${locationText}</div>
+                        // Cria o card do evento
+                        const eventCard = document.createElement('div');
+                        eventCard.classList.add('event-card');
+                        eventCard.innerHTML = `
+                            <div class="event-header">
+                                <div class="date-day">${dateInfo.day}</div>
+                                <div class="date-month">${dateInfo.month}</div>
                             </div>
-                            <div class="event-time">${timeFormatted}</div>
+                            <div class="event-details">
+                                <h3>${description}</h3>
+                                <p><i class="fas fa-clock"></i> ${startDateTime}</p>
+                                <p class="location"><i class="fas fa-map-marker-alt"></i> ${location}</p>
+                                </div>
                         `;
-                        
-                        eventList.appendChild(listItem);
+                        eventListContainer.appendChild(eventCard);
                     });
                 } else {
-                    eventList.innerHTML = '<li class="event-item"><div class="event-date-location"><div class="event-date">Agenda Vazia</div><div class="event-location">Nenhum show público agendado no momento.</div></div></li>';
+                    eventListContainer.innerHTML = '<p class="no-events">Não há shows públicos agendados no momento.</p>';
                 }
-                
-                // Se a lista estiver vazia (porque todos foram filtrados), exibe a mensagem de agenda vazia
-                if (eventList.children.length === 0) {
-                    eventList.innerHTML = '<li class="event-item"><div class="event-date-location"><div class="event-date">Agenda Vazia</div><div class="event-location">Nenhum show público agendado no momento.</div></div></li>';
-                }
-
 
             } catch (error) {
-                console.error("Erro ao buscar eventos do Google Calendar:", error);
-                
-                let errorMessage = 'Não foi possível carregar a agenda. Verifique sua Chave de API, as restrições e se o calendário está público.';
-                
-                // Mensagem específica para erro 400 ou 403 (chave inválida / permissão negada)
-                if (error.message.includes('HTTP Error 400') || error.message.includes('HTTP Error 403')) {
-                     errorMessage = 'Falha na Autenticação (Chave/Permissões). Por favor, verifique no Google Cloud Console se a chave está restrita corretamente ao "Google Calendar API" e se o calendário está público.';
-                }
-
-                eventList.innerHTML = `
-                    <li class="event-item">
-                        <div class="event-date-location">
-                            <div class="event-date" style="color: red;">ERRO DE CONEXÃO</div>
-                            <div class="event-location">${errorMessage}</div>
-                        </div>
-                    </li>`;
+                console.error('Erro ao buscar eventos do Google Calendar:', error);
+                eventListContainer.innerHTML = '<p class="no-events">Erro ao carregar a agenda. Por favor, verifique a chave API e o ID do calendário.</p>';
             }
         }
 
-        // Chama a função para carregar os eventos quando a página estiver pronta
-        document.addEventListener('DOMContentLoaded', fetchAndDisplayEvents);
+        // ----------------------------------------------------
+        // Inicialização e Interações
+        // ----------------------------------------------------
 
-
-        // -------------------------------------------------------------------
-        // OUTRAS FUNÇÕES DO SITE (Menu mobile e Smooth scroll)
-        // -------------------------------------------------------------------
-
-        // Menu mobile
-        document.querySelector('.menu-toggle').addEventListener('click', function() {
-            document.querySelector('nav ul').classList.toggle('show');
+        // Carregar a agenda ao carregar a página
+        document.addEventListener('DOMContentLoaded', () => {
+            fetchUpcomingEvents();
         });
 
-        // Form submission (Apenas um placeholder, não envia dados reais)
-        document.querySelector('.contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Aqui você pode adicionar integração com um serviço de formulário (ex: Formspree, EmailJS)
-            alert('Mensagem enviada! Entraremos em contato em breve. (Implementação real do formulário pendente)');
-            this.reset();
+        // Toggle do menu de navegação em mobile
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navbar = document.getElementById('navbar');
+
+        menuToggle.addEventListener('click', () => {
+            navbar.classList.toggle('active');
+            const icon = menuToggle.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
         });
 
-        // Smooth scroll para links internos
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                    
-                    // Fechar menu mobile após clicar em um link
-                    document.querySelector('nav ul').classList.remove('show');
+        // Fechar menu ao clicar em um link
+        document.querySelectorAll('nav ul li a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    navbar.classList.remove('active');
+                    const icon = menuToggle.querySelector('i');
+                    icon.classList.add('fa-bars');
+                    icon.classList.remove('fa-times');
                 }
             });
         });
 
-        // Fechar menu ao clicar fora dele
-        document.addEventListener('click', function(e) {
-            if (!e.target.closest('nav') && !e.target.closest('.menu-toggle')) {
-                document.querySelector('nav ul').classList.remove('show');
-            }
-        });
     </script>
 </body>
 </html>
