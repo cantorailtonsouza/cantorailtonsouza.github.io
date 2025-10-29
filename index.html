@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ailton Souza - Cantor para Eventos Premium</title>
-    <meta name="description" content="Ailton Souza - Cantor profissional para eventos premium. Transforme seu casamento ou evento corporativo em uma experiência única.">
-    <meta name="keywords" content="cantor, eventos, casamento, música ao vivo, show, corporativo">
+    <title>Ailton Souza: Cantor para Casamento, Eventos Corporativos e Festas de Luxo</title>
+    <meta name="description" content="Contrate Ailton Souza. Voz e repertório para Casamentos, Eventos Corporativos e Festas Exclusivas. Orçamento de Música Ao Vivo (Sertanejo, Pop, Clássicos).">
+    <meta name="keywords" content="cantor sertanejo para casamento, música ao vivo luxo, show corporativo, festa de 15 anos premium, contratar cantor Brasília, cantor evento DF">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
@@ -14,6 +14,7 @@
             --color-primary-light: #f8f8f8;
             --color-secondary-grey: #444444;
             --color-accent-gold: #c2a87c;
+            --color-whatsapp: #25d366; /* Cor do WhatsApp */
             --font-main: 'Montserrat', sans-serif;
             --font-headings: 'Playfair Display', serif;
         }
@@ -169,6 +170,13 @@
             box-shadow: 0 6px 20px rgba(0,0,0,0.4);
         }
 
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 20px; /* Espaço entre os botões */
+            flex-wrap: wrap; /* Permite quebrar linha em telas pequenas */
+        }
+
         .btn {
             background-color: var(--color-accent-gold);
             color: var(--color-primary-dark);
@@ -185,6 +193,18 @@
 
         .btn:hover {
             background-color: #d4b88e;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+        }
+
+        /* Novo estilo para o botão do WhatsApp */
+        .btn-whatsapp {
+            background-color: var(--color-whatsapp);
+            color: white;
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #128c7e;
             transform: translateY(-3px);
             box-shadow: 0 6px 20px rgba(0,0,0,0.4);
         }
@@ -389,6 +409,10 @@
             color: var(--color-primary-light);
         }
 
+        /* ================================================= */
+        /* MEDIA QUERIES PARA RESPONSIVIDADE OTIMIZADA */
+        /* ================================================= */
+
         @media (max-width: 768px) {
             .menu-toggle {
                 display: block;
@@ -403,6 +427,8 @@
                 display: none;
                 width: 100%;
                 text-align: center;
+                background-color: rgba(26, 26, 26, 0.95); /* Fundo para o menu */
+                padding: 10px 0;
             }
             
             nav ul.show {
@@ -415,6 +441,7 @@
             
             header .container {
                 flex-direction: column;
+                align-items: flex-start; /* Alinha o logo à esquerda */
             }
             
             .logo-img {
@@ -444,6 +471,12 @@
                 font-size: 1.3em;
             }
             
+            /* Ajuste para o grupo de botões no Hero */
+            .btn-group {
+                flex-direction: column; /* Empilha os botões */
+                gap: 15px;
+            }
+
             #sobre .content-wrapper {
                 flex-direction: column;
                 text-align: center;
@@ -466,15 +499,15 @@
                 margin-top: 10px;
                 text-align: left;
             }
+
+            #midia .video-grid {
+                grid-template-columns: 1fr; /* Coluna única para vídeos no mobile */
+            }
         }
 
         @media (max-width: 480px) {
             .logo-img {
                 height: 35px;
-            }
-            
-            nav ul li {
-                margin-left: 20px;
             }
             
             .hero h1 {
@@ -498,8 +531,8 @@
         <div class="container">
             <a href="#" class="logo">
                 <img src="https://i.postimg.cc/VsVJXM3c/AILTON-SOUZA-IDENTIDADE-VISUAL-AS-BRANCO-2021.png" 
-                     alt="Ailton Souza" 
-                     class="logo-img">
+                    alt="Ailton Souza" 
+                    class="logo-img">
             </a>
             <button class="menu-toggle" aria-label="Abrir menu">☰</button>
             <nav>
@@ -533,7 +566,15 @@
                     </a>
                 </div>
                 
-                <a href="#contato" class="btn">Solicitar Orçamento</a>
+                <div class="btn-group">
+                    <a href="#contato" class="btn">CONTRATE AGORA</a>
+                    <a href="https://wa.me/5511999998888?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20com%20Ailton%20Souza%20para%20o%20meu%20evento." 
+                       class="btn btn-whatsapp" 
+                       target="_blank" 
+                       aria-label="Fale conosco via WhatsApp">
+                       <i class="fab fa-whatsapp"></i> FALE AGORA
+                    </a>
+                </div>
             </div>
         </section>
 
@@ -547,7 +588,7 @@
                         <p>Com uma carreira sólida e uma paixão inabalável pela música, Ailton Souza é a escolha ideal para quem busca excelência e sofisticação. Especializado em eventos premium, ele oferece um repertório versátil e uma interpretação emocionante que se adapta perfeitamente a casamentos, jantares corporativos e celebrações exclusivas.</p>
                         <p>Sua voz marcante e a habilidade de criar a atmosfera perfeita garantem que cada apresentação seja mais do que um show, mas sim uma experiência memorável. Ailton Souza tem o compromisso de entregar não apenas música, mas emoção e profissionalismo em cada nota.</p>
                     </div>
-                    <img src="https://via.placeholder.com/400x500/333333/dddddd?text=AILTON+SOUZA" alt="Ailton Souza no palco">
+                    <img src="https://via.placeholder.com/400x500/333333/dddddd?text=FOTO+PROFISSIONAL+AILTON" alt="Ailton Souza no palco em um evento premium">
                 </div>
             </div>
         </article>
@@ -621,16 +662,16 @@
                     <label for="telefone">Telefone (opcional):</label>
                     <input type="text" id="telefone" name="telefone">
 
-                    <label for="evento">Tipo de Evento:</label>
-                    <input type="text" id="evento" name="evento">
+                    <label for="evento">Tipo de Evento (Obrigatório):</label>
+                    <input type="text" id="evento" name="evento" placeholder="Ex: Casamento, Evento Corporativo, Aniversário" required>
 
                     <label for="mensagem">Mensagem:</label>
-                    <textarea id="mensagem" name="mensagem" required></textarea>
+                    <textarea id="mensagem" name="mensagem" placeholder="Data/Mês do evento e local (Cidade/Estado)." required></textarea>
 
                     <input type="submit" value="Enviar Mensagem">
                 </form>
                 <div class="contact-info">
-                    <p>Ou, para um atendimento mais rápido:</p>
+                    <p>Ou, para um atendimento mais rápido e contratação imediata:</p>
                     <p>WhatsApp: <a href="https://wa.me/5511999998888" target="_blank">(11) 99999-8888</a></p>
                     <p>E-mail: <a href="mailto:contato@ailtonsouza.com.br">contato@ailtonsouza.com.br</a></p>
                 </div>
@@ -640,7 +681,7 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 Ailton Souza. Todos os direitos reservados.</p>
+            <p>© 2024 Ailton Souza. Todos os direitos reservados.</p>
             <div class="social-links">
                 <a href="https://instagram.com/cantorailtonsouza" target="_blank" aria-label="Instagram">
                     <i class="fab fa-instagram"></i>
@@ -691,11 +732,4 @@
 
         // Fechar menu ao clicar fora dele
         document.addEventListener('click', function(e) {
-            if (!e.target.closest('nav') && !e.target.closest('.menu-toggle')) {
-                document.querySelector('nav ul').classList.remove('show');
-            }
-        });
-    </script>
-</body>
-</html>
-
+            if (!e.target.closest('nav') && !e.target.closest('.menu-toggle
