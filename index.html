@@ -13,7 +13,7 @@
             --color-primary-dark: #1a1a1a;
             --color-primary-light: #f8f8f8;
             --color-secondary-grey: #444444;
-            --color-accent-gold:#D4AF37; 
+            --color-accent-gold: #c2a87c;
             --color-whatsapp: #25d366; /* Cor do WhatsApp */
             --font-main: 'Montserrat', sans-serif;
             --font-headings: 'Playfair Display', serif;
@@ -133,9 +133,23 @@
             position: relative;
         }
 
+        /* Nova logo no Hero */
+        .hero-logo-img {
+            height: 120px; /* Tamanho médio para desktop */
+            width: auto;
+            margin-bottom: 30px; /* Espaçamento entre a logo e o texto */
+            transition: transform 0.3s ease;
+            filter: drop-shadow(0 0 10px rgba(0,0,0,0.7)); /* Sombra para destacar */
+        }
+
+        .hero-logo-img:hover {
+            transform: scale(1.08); /* Suavemente maior ao passar o mouse */
+        }
+
+
         .hero h1 {
             font-family: var(--font-headings);
-            font-size: 3.5em;
+            font-size: 3em; /* Reduzido de 3.5em para 3em */
             margin-bottom: 30px;
             color: var(--color-primary-light);
             text-shadow: 2px 2px 12px rgba(0,0,0,0.8);
@@ -331,40 +345,55 @@
             font-size: 1.1em;
             margin-bottom: 30px;
         }
-
-
+        
+        /* ESTILOS DA AGENDA (LISTA) */
         #agenda .event-list {
             list-style: none;
+            padding: 0;
+            max-width: 700px;
+            margin: 0 auto;
         }
+
         #agenda .event-item {
-            background-color: var(--color-secondary-grey);
+            background-color: #2b2b2b;
             margin-bottom: 20px;
-            padding: 25px;
+            padding: 20px;
             border-radius: 8px;
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+            justify-content: space-between;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
             transition: background-color 0.3s ease;
         }
+        
         #agenda .event-item:hover {
-            background-color: #555;
+            background-color: #3a3a3a;
         }
-        #agenda .event-info h3 {
-            font-size: 1.5em;
-            color: var(--color-accent-gold);
-            margin-bottom: 5px;
+
+        #agenda .event-date-location {
+            flex-grow: 1;
         }
-        #agenda .event-info p {
-            color: var(--color-primary-light);
-            font-size: 1.1em;
-        }
+        
         #agenda .event-date {
             font-size: 1.2em;
             font-weight: 700;
             color: var(--color-accent-gold);
-            text-align: right;
+            margin-bottom: 5px;
         }
+
+        #agenda .event-location {
+            font-size: 1em;
+            color: var(--color-primary-light);
+        }
+
+        #agenda .event-time {
+            font-size: 1em;
+            font-weight: 600;
+            color: #ddd;
+            padding-left: 20px;
+            white-space: nowrap; /* Não quebra a hora */
+        }
+        /* FIM DOS ESTILOS DA AGENDA */
 
         #contato {
             background-color: var(--color-secondary-grey);
@@ -506,8 +535,13 @@
                             no-repeat center center/cover;
             }
             
+            .hero-logo-img {
+                height: 90px; /* Reduz tamanho para mobile */
+                margin-bottom: 20px;
+            }
+
             .hero h1 {
-                font-size: 2.5em;
+                font-size: 2.5em; /* Ajuste para mobile */
             }
             
             .social-icons-hero {
@@ -538,16 +572,6 @@
                 font-size: 2.2em;
             }
             
-            .event-item {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            
-            .event-date {
-                margin-top: 10px;
-                text-align: left;
-            }
-
             #midia .video-grid {
                 grid-template-columns: 1fr; 
             }
@@ -562,6 +586,10 @@
                 height: 35px;
             }
             
+            .hero-logo-img {
+                height: 70px; /* Mais ajuste para telas pequenas */
+            }
+
             .hero h1 {
                 font-size: 2em;
             }
@@ -602,6 +630,11 @@
     <main role="main">
         <section class="hero">
             <div class="hero-content">
+                
+<img src="https://i.postimg.cc/VsVJXM3c/AILTON-SOUZA-IDENTIDADE-VISUAL-AS-BRANCO-2021.png" 
+                     alt="Ailton Souza - Logo" 
+                     class="hero-logo-img">
+
                 <h1>Sua Música, Seu Momento. Inesquecível.</h1>
                 
                 <div class="social-icons-hero">
@@ -624,7 +657,7 @@
                        class="btn btn-whatsapp" 
                        target="_blank" 
                        aria-label="Fale conosco via WhatsApp">
-                       <i class="fab fa-whatsapp"></i> FALE AGORA
+                       <i class="fab fa-whatsapp"></i> CONTRATE AGORA
                     </a>
                 </div>
             </div>
@@ -658,19 +691,19 @@
         <section id="midia">
             <div class="container">
                 <h2>Mídia</h2>
-                <p style="text-align: center; margin-bottom: 40px;">Assista a alguns dos meus momentos no palco e sinta a energia dos shows.</p>
+                <p style="text-align: center; margin-bottom: 40px;">Conheça meu trabalho, assista meus vídeos. </p>
                 <div class="video-grid">
                     <div class="video-item">
-                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
-                        <h3>Momento Casamento: Clássicos Inesquecíveis</h3>
+                        <iframe src="https://www.youtube.com/embed/AmTehR-K1tk?si=3KZNCiEcxJ27jS10" frameborder="0" allowfullscreen></iframe>
+                        <h3>Véio Milionário</h3>
                     </div>
                     <div class="video-item">
-                        <iframe src="https://www.youtube.com/embed/videoseries?list=PLx0sYbCqOb8T3Y4-W58F0Kq23Xw7x_8" frameborder="0" allowfullscreen></iframe>
-                        <h3>Show Acústico: Voz e Violão</h3>
+                        <iframe src="https://www.youtube.com/embed/RGEjTbVpCI8?si=ZLseC6FSJhliqkBn" frameborder="0" allowfullscreen></iframe>
+                        <h3>Saudade Maquiada</h3>
                     </div>
                     <div class="video-item">
-                        <iframe src="https://www.youtube.com/embed/watch?v=YOUR_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
-                        <h3>Performance em Evento Corporativo</h3>
+                        <iframe src="https://www.youtube.com/embed/GzEtiWjHnZo?si=jX6G9vZW2zDq_i6h" frameborder="0" allowfullscreen></iframe>
+                        <h3>Acústico Na Rua de Casa</h3>
                     </div>
                 </div>
             </div>
@@ -694,36 +727,16 @@
         <section id="agenda">
             <div class="container">
                 <h2>Próximos Shows</h2>
-                <ul class="event-list">
+                
+                <ul id="dynamic-event-list" class="event-list">
                     <li class="event-item">
-                        <div class="event-info">
-                            <h3>Casamento Sra. e Sr. Silva</h3>
-                            <p>Evento Privado - São Paulo, SP</p>
+                        <div class="event-date-location">
+                            <div class="event-date">Carregando Agenda...</div>
+                            <div class="event-location">Aguarde, conectando ao Google Calendar.</div>
                         </div>
-                        <span class="event-date">15 JUL | 2024</span>
-                    </li>
-                    <li class="event-item">
-                        <div class="event-info">
-                            <h3>Jantar de Gala Corporativo</h3>
-                            <p>Hotel Fasano - Rio de Janeiro, RJ</p>
-                        </div>
-                        <span class="event-date">02 AGO | 2024</span>
-                    </li>
-                    <li class="event-item">
-                        <div class="event-info">
-                            <h3>Aniversário Exclusivo</h3>
-                            <p>Evento Privado - Campinas, SP</p>
-                        </div>
-                        <span class="event-date">20 SET | 2024</span>
-                    </li>
-                    <li class="event-item">
-                        <div class="event-info">
-                            <h3>Reserva de Natal</h3>
-                            <p>Disponível para Eventos de Fim de Ano</p>
-                        </div>
-                        <span class="event-date">DEZ | 2024</span>
                     </li>
                 </ul>
+
             </div>
         </section>
 
@@ -751,7 +764,7 @@
                 <div class="contact-info">
                     <p>Ou, para um atendimento mais rápido e contratação imediata:</p>
                     <p>WhatsApp: <a href="https://wa.me/5561993594339" target="_blank">(61) 99359-4339</a></p>
-                    <p>E-mail: <a href="mailto:contato@ailtonsouza.com.br">contato@ailtonsouza.com.br</a></p>
+                    <p>E-mail: <a href="mailto:cantorailtonsouza@gmail.com">cantorailtonsouza@gmail.com</a></p>
                 </div>
             </div>
         </section>
@@ -778,17 +791,119 @@
     </footer>
 
     <script>
+        // Configurações da API do Google Calendar
+        const API_KEY = 'AIzaSyDMDlmLHjyHHU7-sJ2hMgc8giQ003XokKw'; // <<< SUA CHAVE DE API INSERIDA AQUI
+        const CALENDAR_ID = 'etb150ebv2gqid9rtt51u708m8@group.calendar.google.com';
+        const MAX_EVENTS = 10;
+        
+        const eventList = document.getElementById('dynamic-event-list');
+
+        // Função para formatar a data (Dia/Mês/Ano)
+        function formatDate(dateString) {
+            const options = { weekday: 'short', day: 'numeric', month: 'long', year: 'numeric' };
+            const date = new Date(dateString);
+            return date.toLocaleDateString('pt-BR', options);
+        }
+
+        // Função para formatar a hora (HH:MM)
+        function formatTime(dateTimeString) {
+            if (!dateTimeString) return '';
+            const date = new Date(dateTimeString);
+            // Verifica se é um evento de dia inteiro (all-day event)
+            if (dateTimeString.length === 10) { // e.g., '2025-10-30'
+                return 'Dia Inteiro';
+            }
+            // Formata hora normal
+            const options = { hour: '2-digit', minute: '2-digit', hour12: false, timeZone: 'America/Sao_Paulo' };
+            return date.toLocaleTimeString('pt-BR', options);
+        }
+
+        // Função principal para buscar e exibir os eventos
+        async function fetchAndDisplayEvents() {
+            // URL da API para buscar eventos futuros, ordenados por data
+            const now = new Date().toISOString();
+            const url = `https://www.googleapis.com/calendar/v3/calendars/${CALENDAR_ID}/events?key=${API_KEY}&timeMin=${now}&singleEvents=true&orderBy=startTime&maxResults=${MAX_EVENTS}`;
+
+            try {
+                const response = await fetch(url);
+                if (!response.ok) {
+                    // Tenta ler o erro do corpo da resposta
+                    const errorText = await response.text();
+                    throw new Error(`Erro de HTTP: ${response.status} - ${errorText}`);
+                }
+                const data = await response.json();
+                
+                // Limpa o estado de "carregando"
+                eventList.innerHTML = '';
+
+                if (data.items && data.items.length > 0) {
+                    data.items.forEach(event => {
+                        const startDateTime = event.start.dateTime || event.start.date;
+                        
+                        // Ignora eventos que não têm data de início, são cancelados ou têm visibilidade privada
+                        if (!startDateTime || event.status === 'cancelled' || event.visibility === 'private') return;
+
+                        const dateFormatted = formatDate(startDateTime);
+                        const timeFormatted = formatTime(startDateTime);
+                        const locationText = event.location || 'Local não informado';
+                        
+                        // O campo 'summary' (título do evento) será usado como o Título/Data Principal
+                        const eventTitle = event.summary || 'Evento Sem Título';
+                        
+                        // Cria o elemento da lista no formato desejado
+                        const listItem = document.createElement('li');
+                        listItem.className = 'event-item';
+                        listItem.innerHTML = `
+                            <div class="event-date-location">
+                                <div class="event-date">${eventTitle} (${dateFormatted})</div>
+                                <div class="event-location"><i class="fas fa-map-marker-alt"></i> ${locationText}</div>
+                            </div>
+                            <div class="event-time">${timeFormatted}</div>
+                        `;
+                        
+                        eventList.appendChild(listItem);
+                    });
+                } else {
+                    eventList.innerHTML = '<li class="event-item"><div class="event-date-location"><div class="event-date">Agenda Vazia</div><div class="event-location">Nenhum show público agendado no momento.</div></div></li>';
+                }
+                
+                // Se a lista estiver vazia (porque todos foram filtrados), exibe a mensagem de agenda vazia
+                if (eventList.children.length === 0) {
+                    eventList.innerHTML = '<li class="event-item"><div class="event-date-location"><div class="event-date">Agenda Vazia</div><div class="event-location">Nenhum show público agendado no momento.</div></div></li>';
+                }
+
+
+            } catch (error) {
+                console.error("Erro ao buscar eventos do Google Calendar:", error);
+                eventList.innerHTML = `
+                    <li class="event-item">
+                        <div class="event-date-location">
+                            <div class="event-date" style="color: red;">ERRO DE CONEXÃO</div>
+                            <div class="event-location">Não foi possível carregar a agenda. Verifique sua Chave de API, as restrições e se o calendário está público.</div>
+                        </div>
+                    </li>`;
+            }
+        }
+
+        // Chama a função para carregar os eventos quando a página estiver pronta
+        document.addEventListener('DOMContentLoaded', fetchAndDisplayEvents);
+
+
+        // -------------------------------------------------------------------
+        // OUTRAS FUNÇÕES DO SITE (Menu mobile e Smooth scroll)
+        // -------------------------------------------------------------------
+
         // Menu mobile
         document.querySelector('.menu-toggle').addEventListener('click', function() {
             document.querySelector('nav ul').classList.toggle('show');
         });
 
-        // Form submission
+        // Form submission (Apenas um placeholder, não envia dados reais)
         document.querySelector('.contact-form').addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Aqui você pode adicionar integração com EmailJS ou outro serviço
-            alert('Mensagem enviada! Entraremos em contato em breve.');
+            // Aqui você pode adicionar integração com um serviço de formulário (ex: Formspree, EmailJS)
+            alert('Mensagem enviada! Entraremos em contato em breve. (Implementação real do formulário pendente)');
             this.reset();
         });
 
@@ -817,5 +932,3 @@
     </script>
 </body>
 </html>
-
-
