@@ -792,7 +792,7 @@
 
     <script>
         // Configurações da API do Google Calendar
-        const API_KEY = 'AIzaSyDMDlmLHjyHHU7-sJ2hMgc8giQ003XokKw'; // <<< SUA CHAVE DE API INSERIDA AQUI
+        const API_KEY = 'AIzaSyCraxjn4kA2Z-P3vvVwr_SHZAqTnGbkNaM'; // <<< NOVA CHAVE DE API INSERIDA
         const CALENDAR_ID = 'etb150ebv2gqid9rtt51u708m8@group.calendar.google.com';
         const MAX_EVENTS = 10;
         
@@ -829,7 +829,8 @@
                 if (!response.ok) {
                     // Tenta ler o erro do corpo da resposta
                     const errorText = await response.text();
-                    throw new Error(`Erro de HTTP: ${response.status} - ${errorText}`);
+                    // Lança o erro para o bloco catch
+                    throw new Error(`HTTP Error ${response.status}: ${errorText}`);
                 }
                 const data = await response.json();
                 
@@ -875,11 +876,19 @@
 
             } catch (error) {
                 console.error("Erro ao buscar eventos do Google Calendar:", error);
+                
+                let errorMessage = 'Não foi possível carregar a agenda. Verifique sua Chave de API, as restrições e se o calendário está público.';
+                
+                // Mensagem específica para erro 400 ou 403 (chave inválida / permissão negada)
+                if (error.message.includes('HTTP Error 400') || error.message.includes('HTTP Error 403')) {
+                     errorMessage = 'Falha na Autenticação (Chave/Permissões). Por favor, verifique no Google Cloud Console se a chave está restrita corretamente ao "Google Calendar API" e se o calendário está público.';
+                }
+
                 eventList.innerHTML = `
                     <li class="event-item">
                         <div class="event-date-location">
                             <div class="event-date" style="color: red;">ERRO DE CONEXÃO</div>
-                            <div class="event-location">Não foi possível carregar a agenda. Verifique sua Chave de API, as restrições e se o calendário está público.</div>
+                            <div class="event-location">${errorMessage}</div>
                         </div>
                     </li>`;
             }
