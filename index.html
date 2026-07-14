@@ -1410,8 +1410,7 @@
                 `Número aproximado de convidados: ${convidados || 'Não informado'}`,
                 `Formato de show desejado: ${formato}`,
                 `Informações adicionais: ${mensagem || 'Nenhuma informação adicional'}`
-            ].join('
-');
+            ].join('\n');
 
             const numeroWhatsApp = '5561993594339';
             const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(textoWhatsApp)}`;
@@ -1444,4 +1443,3 @@
     </script>
 </body>
 </html>
-
