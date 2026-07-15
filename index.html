@@ -2380,6 +2380,260 @@
             }
         }
 
+    
+        /* ================================================= */
+        /* CORREÇÕES EXCLUSIVAS PARA CELULAR */
+        /* O layout desktop permanece inalterado. */
+        /* ================================================= */
+
+        @media (max-width: 768px) {
+            html,
+            body {
+                max-width: 100%;
+                overflow-x: hidden;
+            }
+
+            header {
+                padding: 8px 0;
+            }
+
+            header .container {
+                position: relative;
+                min-height: 58px;
+                padding-left: 18px;
+                padding-right: 18px;
+            }
+
+            .logo-img {
+                width: 56px;
+                height: 56px;
+            }
+
+            .menu-toggle {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                z-index: 1002;
+                margin-left: auto;
+                width: 44px;
+                height: 44px;
+                padding: 0;
+                font-size: 0;
+            }
+
+            .menu-toggle::before,
+            .menu-toggle::after,
+            .menu-toggle span {
+                content: '';
+                position: absolute;
+                width: 20px;
+                height: 2px;
+                border-radius: 999px;
+                background: currentColor;
+                transition:
+                    transform 0.28s ease,
+                    opacity 0.28s ease,
+                    top 0.28s ease;
+            }
+
+            .menu-toggle::before {
+                top: 14px;
+            }
+
+            .menu-toggle span {
+                top: 20px;
+            }
+
+            .menu-toggle::after {
+                top: 26px;
+            }
+
+            .menu-toggle[aria-expanded="true"]::before {
+                top: 20px;
+                transform: rotate(45deg);
+            }
+
+            .menu-toggle[aria-expanded="true"] span {
+                opacity: 0;
+            }
+
+            .menu-toggle[aria-expanded="true"]::after {
+                top: 20px;
+                transform: rotate(-45deg);
+            }
+
+            header nav {
+                position: absolute;
+                top: calc(100% + 9px);
+                left: 18px;
+                right: 18px;
+                z-index: 1001;
+                pointer-events: none;
+            }
+
+            header nav ul {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 0;
+                width: 100%;
+                max-height: 0;
+                margin: 0;
+                padding: 0 18px;
+                overflow: hidden;
+                opacity: 0;
+                transform: translateY(-10px);
+                border: 1px solid transparent;
+                border-radius: 12px;
+                background:
+                    linear-gradient(
+                        145deg,
+                        rgba(18, 18, 18, 0.98),
+                        rgba(6, 6, 6, 0.98)
+                    );
+                box-shadow: 0 22px 50px rgba(0, 0, 0, 0.58);
+                backdrop-filter: blur(18px);
+                -webkit-backdrop-filter: blur(18px);
+                transition:
+                    max-height 0.38s ease,
+                    padding 0.30s ease,
+                    opacity 0.25s ease,
+                    transform 0.30s ease,
+                    border-color 0.30s ease;
+            }
+
+            header nav ul.show {
+                max-height: min(72vh, 620px);
+                padding-top: 10px;
+                padding-bottom: 10px;
+                overflow-y: auto;
+                opacity: 1;
+                transform: translateY(0);
+                border-color: rgba(197, 161, 90, 0.30);
+                pointer-events: auto;
+            }
+
+            header nav ul li {
+                margin: 0;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.055);
+            }
+
+            header nav ul li:last-child {
+                border-bottom: 0;
+            }
+
+            header nav ul li a {
+                display: block;
+                width: 100%;
+                padding: 13px 6px;
+                color: rgba(247, 243, 237, 0.90);
+                font-size: 0.94rem;
+                letter-spacing: 0.035em;
+            }
+
+            header nav ul li a::after {
+                display: none;
+            }
+
+            header nav ul li a:hover,
+            header nav ul li a:focus-visible {
+                color: var(--color-accent-gold);
+            }
+
+            .hero {
+                min-height: calc(100svh - 74px);
+                height: auto;
+                padding: clamp(360px, 48svh, 430px) 16px 34px;
+                justify-content: center;
+                align-items: flex-end;
+                background-image:
+                    linear-gradient(
+                        180deg,
+                        rgba(9, 9, 9, 0.02) 0%,
+                        rgba(9, 9, 9, 0.08) 29%,
+                        rgba(9, 9, 9, 0.46) 48%,
+                        rgba(9, 9, 9, 0.90) 67%,
+                        #090909 82%,
+                        #090909 100%
+                    ),
+                    url('https://i.postimg.cc/1RJGcYJn/FOTO-DO-SITE.png');
+                background-size: auto clamp(410px, 52svh, 500px);
+                background-position: 70% top;
+                background-repeat: no-repeat;
+                background-color: #090909;
+            }
+
+            .hero::after {
+                top: 5%;
+                right: -16%;
+                width: 76vw;
+                opacity: 0.56;
+            }
+
+            .hero-content {
+                width: min(100%, 430px);
+                margin: 0 auto;
+                padding: 0;
+            }
+
+            .hero-logo-img {
+                height: clamp(90px, 24vw, 112px);
+                max-width: 90vw;
+                margin-bottom: 16px;
+            }
+
+            .hero h1 {
+                max-width: 390px;
+                margin-bottom: 22px;
+                font-size: clamp(2rem, 10vw, 3rem);
+                line-height: 1.02;
+            }
+
+            .social-icons-hero {
+                gap: 12px;
+                margin-bottom: 22px;
+            }
+
+            .social-icon {
+                width: 48px;
+                height: 48px;
+                font-size: 1.12rem;
+            }
+
+            .btn-group {
+                width: 100%;
+            }
+
+            .btn-whatsapp {
+                width: min(100%, 390px);
+                padding: 16px 18px;
+                font-size: 0.95rem;
+                white-space: normal;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .hero {
+                min-height: auto;
+                padding-top: clamp(335px, 46svh, 390px);
+                background-size: auto clamp(385px, 49svh, 455px);
+                background-position: 72% top;
+            }
+
+            .hero-logo-img {
+                height: 92px;
+            }
+
+            .hero h1 {
+                font-size: clamp(1.95rem, 10.4vw, 2.7rem);
+            }
+
+            .social-icon {
+                width: 46px;
+                height: 46px;
+            }
+        }
+
     </style>
 
     <script type="application/ld+json">
@@ -2430,7 +2684,7 @@
                     alt="Ailton Souza" 
                     class="logo-img">
             </a>
-            <button class="menu-toggle" aria-label="Abrir menu">☰</button>
+            <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false"><span></span></button>
             <nav>
                 <ul>
                     <li><a href="#sobre">Sobre</a></li>
@@ -3584,9 +3838,15 @@
         // OUTRAS FUNÇÕES DO SITE (Menu mobile e Smooth scroll)
         // -------------------------------------------------------------------
 
-        // Menu mobile
-        document.querySelector('.menu-toggle').addEventListener('click', function() {
-            document.querySelector('nav ul').classList.toggle('show');
+        // Menu mobile acessível
+        const menuToggle = document.querySelector('.menu-toggle');
+        const menuList = document.querySelector('header nav ul');
+
+        menuToggle.addEventListener('click', function(event) {
+            event.stopPropagation();
+            const isOpen = menuList.classList.toggle('show');
+            menuToggle.setAttribute('aria-expanded', String(isOpen));
+            menuToggle.setAttribute('aria-label', isOpen ? 'Fechar menu' : 'Abrir menu');
         });
 
         // Formulário de orçamento com envio direto para o WhatsApp
@@ -3747,6 +4007,16 @@
         });
 
 
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape' && menuList.classList.contains('show')) {
+                menuList.classList.remove('show');
+                menuToggle.setAttribute('aria-expanded', 'false');
+                menuToggle.setAttribute('aria-label', 'Abrir menu');
+                menuToggle.focus();
+            }
+        });
+
         // Smooth scroll para links internos
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -3758,15 +4028,19 @@
                     });
                     
                     // Fechar menu mobile após clicar em um link
-                    document.querySelector('nav ul').classList.remove('show');
+                    menuList.classList.remove('show');
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                    menuToggle.setAttribute('aria-label', 'Abrir menu');
                 }
             });
         });
 
         // Fechar menu ao clicar fora dele
         document.addEventListener('click', function(e) {
-            if (!e.target.closest('nav') && !e.target.closest('.menu-toggle')) {
-                document.querySelector('nav ul').classList.remove('show');
+            if (!e.target.closest('header nav') && !e.target.closest('.menu-toggle')) {
+                menuList.classList.remove('show');
+                menuToggle.setAttribute('aria-expanded', 'false');
+                menuToggle.setAttribute('aria-label', 'Abrir menu');
             }
         });
     </script>
