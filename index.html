@@ -3546,10 +3546,13 @@
       "@id": "https://ailtonsouza.com.br/#website",
       "url": "https://ailtonsouza.com.br/",
       "name": "Ailton Souza",
-      "alternateName": "Cantor Ailton Souza",
+      "alternateName": [
+        "Cantor Ailton Souza",
+        "Ailton Souza Oficial"
+      ],
       "inLanguage": "pt-BR",
       "publisher": {
-        "@id": "https://ailtonsouza.com.br/#ailton-souza"
+        "@id": "https://ailtonsouza.com.br/#artista"
       }
     },
     {
@@ -3557,36 +3560,101 @@
       "@id": "https://ailtonsouza.com.br/#webpage",
       "url": "https://ailtonsouza.com.br/",
       "name": "Ailton Souza | Cantor Sertanejo em Luziânia e Brasília",
-      "description": "Ailton Souza é cantor sertanejo em Luziânia e Brasília, com música ao vivo para casamentos, eventos corporativos, festas particulares e shows em Goiás e no Distrito Federal.",
+      "description": "Site oficial do cantor sertanejo Ailton Souza, com formatos de show para casamentos, eventos corporativos, festas particulares, voz e violão, banda reduzida e apresentações premium em Goiás, Distrito Federal e outras regiões.",
       "isPartOf": {
         "@id": "https://ailtonsouza.com.br/#website"
       },
       "about": {
-        "@id": "https://ailtonsouza.com.br/#ailton-souza"
+        "@id": "https://ailtonsouza.com.br/#artista"
       },
       "inLanguage": "pt-BR",
       "primaryImageOfPage": {
         "@type": "ImageObject",
-        "url": "images/FOTO-DO-SITE.webp"
+        "@id": "https://ailtonsouza.com.br/#imagem-principal",
+        "url": "https://ailtonsouza.com.br/images/FOTO-DO-SITE.webp",
+        "contentUrl": "https://ailtonsouza.com.br/images/FOTO-DO-SITE.webp",
+        "caption": "Ailton Souza, cantor sertanejo em Luziânia e Brasília"
+      },
+      "mainEntity": {
+        "@id": "https://ailtonsouza.com.br/#artista"
       }
     },
     {
       "@type": "Person",
-      "@id": "https://ailtonsouza.com.br/#ailton-souza",
+      "@id": "https://ailtonsouza.com.br/#artista",
       "name": "Ailton Souza",
-      "alternateName": "Cantor Ailton Souza",
+      "alternateName": [
+        "Cantor Ailton Souza",
+        "Ailton Jesus de Souza"
+      ],
       "url": "https://ailtonsouza.com.br/",
-      "image": "images/FOTO-DO-SITE.webp",
-      "logo": "images/logo-completa.png",
-      "jobTitle": "Cantor",
-      "description": "Ailton Souza é cantor sertanejo para casamentos, eventos corporativos, festas particulares e shows premium em Brasília, Luziânia, Goiás e região.",
+      "image": {
+        "@type": "ImageObject",
+        "@id": "https://ailtonsouza.com.br/#imagem-principal",
+        "url": "https://ailtonsouza.com.br/images/FOTO-DO-SITE.webp",
+        "contentUrl": "https://ailtonsouza.com.br/images/FOTO-DO-SITE.webp",
+        "caption": "Ailton Souza, cantor sertanejo"
+      },
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://ailtonsouza.com.br/images/logo-completa.png",
+        "contentUrl": "https://ailtonsouza.com.br/images/logo-completa.png",
+        "caption": "Logo oficial Ailton Souza"
+      },
+      "description": "Ailton Souza é cantor sertanejo de Luziânia, Goiás, com apresentações para casamentos, eventos corporativos, festas particulares, bares, eventos públicos, voz e violão, banda reduzida e shows premium.",
+      "jobTitle": "Cantor sertanejo",
+      "hasOccupation": {
+        "@type": "Occupation",
+        "name": "Cantor e músico",
+        "occupationLocation": [
+          {
+            "@type": "City",
+            "name": "Luziânia"
+          },
+          {
+            "@type": "City",
+            "name": "Brasília"
+          },
+          {
+            "@type": "State",
+            "name": "Goiás"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Distrito Federal"
+          }
+        ]
+      },
       "telephone": "+55 61 99584-0847",
       "email": "cantorailtonsouza@gmail.com",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "Contratação e orçamento",
+        "telephone": "+55 61 99584-0847",
+        "email": "cantorailtonsouza@gmail.com",
+        "availableLanguage": [
+          "Português"
+        ],
+        "areaServed": "BR"
+      },
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Luziânia",
         "addressRegion": "GO",
         "addressCountry": "BR"
+      },
+      "homeLocation": {
+        "@type": "Place",
+        "name": "Luziânia, Goiás, Brasil"
+      },
+      "nationality": {
+        "@type": "Country",
+        "name": "Brasil"
+      },
+      "knowsLanguage": {
+        "@type": "Language",
+        "name": "Português",
+        "alternateName": "pt-BR"
       },
       "areaServed": [
         {
@@ -3598,12 +3666,20 @@
           "name": "Brasília"
         },
         {
-          "@type": "AdministrativeArea",
-          "name": "Distrito Federal"
+          "@type": "City",
+          "name": "Valparaíso de Goiás"
+        },
+        {
+          "@type": "City",
+          "name": "Goiânia"
+        },
+        {
+          "@type": "State",
+          "name": "Goiás"
         },
         {
           "@type": "AdministrativeArea",
-          "name": "Goiás"
+          "name": "Distrito Federal"
         },
         {
           "@type": "Country",
@@ -3612,17 +3688,88 @@
       ],
       "knowsAbout": [
         "Sertanejo",
-        "Modão",
+        "Sertanejo universitário",
+        "Modão sertanejo",
+        "Forró",
+        "Arrocha",
         "Música ao vivo",
+        "Voz e violão",
+        "Banda reduzida",
+        "Shows premium",
         "Casamentos",
         "Eventos corporativos",
         "Festas particulares"
       ],
+      "performerIn": {
+        "@type": "Event",
+        "name": "Apresentações musicais de Ailton Souza",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "location": {
+          "@type": "Place",
+          "name": "Goiás, Distrito Federal e outras regiões do Brasil"
+        }
+      },
       "sameAs": [
         "https://www.instagram.com/cantorailtonsouza/",
-        "https://www.facebook.com/cantorailtonsouza",
+        "https://www.facebook.com/cantorailtonsouza/",
+        "https://www.youtube.com/ailtonsouza",
         "https://open.spotify.com/intl-pt/artist/1FMGSVblgyS6fZWb8unucG",
-        "https://www.youtube.com/ailtonsouza"
+        "https://www.palcomp3.com.br/ailtonsouza/",
+        "https://suamusica.com.br/ailtonsouzaET",
+        "https://www.deezer.com/br/artist/9465692",
+        "https://music.apple.com/br/artist/ailton-souza/1556797147",
+        "https://music.amazon.co.uk/artists/B0831VRCXG/ailton-souza",
+        "https://tidal.com/artist/11091669",
+        "https://soundcloud.com/ailtonsouza",
+        "https://www.cifraclub.com.br/ailton-souza/",
+        "https://www.letras.mus.br/ailton-souza/"
+      ],
+      "subjectOf": [
+        {
+          "@type": "ProfilePage",
+          "name": "Ailton Souza no Spotify",
+          "url": "https://open.spotify.com/intl-pt/artist/1FMGSVblgyS6fZWb8unucG"
+        },
+        {
+          "@type": "ProfilePage",
+          "name": "Ailton Souza no YouTube",
+          "url": "https://www.youtube.com/ailtonsouza"
+        },
+        {
+          "@type": "ProfilePage",
+          "name": "Ailton Souza no Instagram",
+          "url": "https://www.instagram.com/cantorailtonsouza/"
+        }
+      ]
+    },
+    {
+      "@type": "MusicGroup",
+      "@id": "https://ailtonsouza.com.br/#projeto-musical",
+      "name": "Ailton Souza",
+      "url": "https://ailtonsouza.com.br/",
+      "logo": "https://ailtonsouza.com.br/images/logo-completa.png",
+      "image": "https://ailtonsouza.com.br/images/FOTO-DO-SITE.webp",
+      "genre": [
+        "Sertanejo",
+        "Sertanejo universitário",
+        "Modão sertanejo",
+        "Forró",
+        "Arrocha"
+      ],
+      "member": {
+        "@id": "https://ailtonsouza.com.br/#artista"
+      },
+      "sameAs": [
+        "https://open.spotify.com/intl-pt/artist/1FMGSVblgyS6fZWb8unucG",
+        "https://www.youtube.com/ailtonsouza",
+        "https://www.deezer.com/br/artist/9465692",
+        "https://music.apple.com/br/artist/ailton-souza/1556797147",
+        "https://music.amazon.co.uk/artists/B0831VRCXG/ailton-souza",
+        "https://tidal.com/artist/11091669",
+        "https://soundcloud.com/ailtonsouza",
+        "https://www.palcomp3.com.br/ailtonsouza/",
+        "https://suamusica.com.br/ailtonsouzaET"
       ]
     },
     {
