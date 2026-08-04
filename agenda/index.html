@@ -20,7 +20,7 @@
   <meta property="og:image" content="https://www.ailtonsouza.com.br/agenda/image.webp">
 
   <title>Agenda de Shows | Ailton Souza</title>
-  <meta name="description" content="Confira os próximos 10 shows de Ailton Souza em Luziânia, Brasília, Goiás e região. Agenda atualizada automaticamente.">
+  <meta name="description" content="Confira os próximos shows de Ailton Souza em Luziânia, Brasília, Goiás e região. Agenda atualizada automaticamente em tempo real.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -509,7 +509,7 @@
           <p>Confira as próximas apresentações e encontre a melhor oportunidade para viver a experiência Ailton Souza ao vivo.</p>
           <div class="hero-badges">
             <div class="sync-badge"><i class="fas fa-calendar-check"></i> Atualizada automaticamente pelo Google Agenda</div>
-            <div class="count-badge"><i class="fas fa-microphone-alt"></i> <span id="event-count">Próximos shows confirmados</span></div>
+            <div class="count-badge"><i class="fas fa-bolt"></i> <span>Atualização em Tempo Real</span></div>
           </div>
         </div>
       </div>
@@ -584,7 +584,6 @@
     const CALENDAR_ID = 'etb150ebv2gqid9rtt51u708m8@group.calendar.google.com';
     const MAX_EVENTS = 10;
     const eventList = document.getElementById('dynamic-event-list');
-    const eventCount = document.getElementById('event-count');
 
     const escapeHTML = (value = '') => String(value).replace(/[&<>'"]/g, char => ({
       '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;'
@@ -710,7 +709,6 @@
           return;
         }
 
-        eventCount.textContent = `${validEvents.length} show${validEvents.length > 1 ? 's' : ''} confirmado${validEvents.length > 1 ? 's' : ''}`;
         window.currentAgendaEvents = validEvents;
         eventList.innerHTML = renderGroupedEvents(validEvents);
 
