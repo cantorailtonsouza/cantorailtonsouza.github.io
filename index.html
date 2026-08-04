@@ -3264,6 +3264,140 @@
             }
         }
 
+
+        /* ================================================= */
+        /* AJUSTE FINAL DA AGENDA — SOMENTE CELULAR */
+        /* ================================================= */
+        @media (max-width: 560px) {
+            .agenda-conteudo {
+                min-width: 0;
+                overflow: hidden;
+            }
+
+            .agenda-conteudo h2 {
+                font-size: clamp(1.72rem, 9vw, 2rem);
+                line-height: 1.02;
+                letter-spacing: -0.025em;
+            }
+
+            .agenda-subtitulo {
+                max-width: 100%;
+                font-size: .73rem;
+            }
+
+            .agenda-sync {
+                display: flex;
+                width: 100%;
+                min-width: 0;
+                justify-content: flex-start;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+            }
+
+            .agenda-sync span,
+            .agenda-sync {
+                min-width: 0;
+            }
+
+            .agenda-evento {
+                width: 100%;
+                grid-template-columns: 52px minmax(0, 1fr) 32px;
+                gap: 8px;
+                padding: 8px;
+                overflow: hidden;
+            }
+
+            .agenda-detalhes {
+                width: 100%;
+                min-width: 0;
+                overflow: hidden;
+                padding-right: 1px;
+            }
+
+            .agenda-titulo-evento {
+                width: 100%;
+                padding-right: 0;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                display: block;
+                -webkit-line-clamp: unset;
+                -webkit-box-orient: unset;
+            }
+
+            .agenda-meta {
+                display: flex;
+                flex-wrap: nowrap;
+                align-items: center;
+                width: 100%;
+                min-width: 0;
+                gap: 7px;
+                overflow: hidden;
+            }
+
+            .agenda-meta span {
+                min-width: 0;
+                flex: 0 0 auto;
+                gap: 5px;
+            }
+
+            .agenda-meta span:last-child {
+                flex: 1 1 auto;
+                width: 0;
+                min-width: 0;
+                display: inline-flex;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+            }
+
+            .agenda-meta span:last-child .agenda-local-texto,
+            .agenda-meta span:last-child {
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+
+            .agenda-acoes {
+                width: 32px;
+                min-width: 32px;
+            }
+
+            .agenda-maps {
+                width: 32px;
+                min-width: 32px;
+                height: 32px;
+            }
+
+            .agenda-badge {
+                max-width: 116px;
+                padding: 3px 6px;
+                font-size: .45rem;
+            }
+
+            .agenda-rodape {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 7px;
+                margin-top: 13px;
+            }
+
+            .agenda-completa-btn {
+                width: 100%;
+                padding: 11px 14px;
+                font-size: .70rem;
+                white-space: normal;
+            }
+
+            .agenda-periodo {
+                max-width: none;
+                width: 100%;
+                font-size: .57rem;
+                text-align: center;
+            }
+        }
+
     </style>
 
     <script type="application/ld+json">
