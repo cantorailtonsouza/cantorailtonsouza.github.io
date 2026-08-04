@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Ailton Souza">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#090909">
+  <link rel="canonical" href="https://www.ailtonsouza.com.br/agenda">
+  <link rel="icon" type="image/png" href="https://i.postimg.cc/fyvQd66q/logo-as.png">
+  <link rel="apple-touch-icon" href="https://i.postimg.cc/fyvQd66q/logo-as.png">
+
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Ailton Souza">
+  <meta property="og:title" content="Agenda de Shows | Ailton Souza">
+  <meta property="og:description" content="Confira os próximos shows de Ailton Souza em Luziânia, Brasília, Goiás e região.">
+  <meta property="og:url" content="https://www.ailtonsouza.com.br/agenda">
+  <meta property="og:image" content="https://i.postimg.cc/N0YBqmhc/Ailton-Sentando-caldas.png">
+
+  <title>Agenda de Shows | Ailton Souza</title>
+  <meta name="description" content="Confira os próximos 10 shows de Ailton Souza em Luziânia, Brasília, Goiás e região. Agenda atualizada automaticamente.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="preconnect" href="https://i.postimg.cc">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --dark: #090909;
+      --dark-2: #111111;
+      --light: #f7f3ed;
+      --gold: #c5a15a;
+      --gold-soft: rgba(197,161,90,.24);
+      --font-main: 'Montserrat', sans-serif;
+      --font-heading: 'Playfair Display', serif;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      min-height: 100vh;
+      overflow-x: hidden;
+      background: var(--dark);
+      color: var(--light);
+      font-family: var(--font-main);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container { width: min(1180px, calc(100% - 40px)); margin: 0 auto; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(197,161,90,.22);
+      background: rgba(8,8,8,.9);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+    .header-inner {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .brand img { width: 62px; height: 62px; object-fit: contain; display: block; }
+    .header-actions { display: flex; align-items: center; gap: 12px; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 48px;
+      padding: 12px 20px;
+      border: 1px solid var(--gold);
+      border-radius: 7px;
+      color: var(--gold);
+      background: rgba(12,12,12,.88);
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      font-size: .82rem;
+      font-weight: 700;
+      transition: .3s ease;
+    }
+    .btn:hover { background: var(--gold); color: var(--dark); transform: translateY(-2px); }
+    .btn-solid { background: var(--gold); color: var(--dark); }
+    .btn-solid:hover { background: #e2c781; }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 105px 0 72px;
+      background:
+        radial-gradient(circle at 80% 15%, rgba(197,161,90,.12), transparent 30%),
+        linear-gradient(180deg, #090909 0%, #0d0d0d 100%);
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: .2;
+      background:
+        linear-gradient(90deg, rgba(255,255,255,.014) 1px, transparent 1px),
+        linear-gradient(rgba(255,255,255,.014) 1px, transparent 1px);
+      background-size: 46px 46px;
+    }
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .hero-image {
+      position: relative;
+      min-height: 530px;
+      border: 1px solid rgba(197,161,90,.42);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 30px 70px rgba(0,0,0,.5);
+      background: #0b0b0b;
+    }
+    .hero-image img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transform: scale(1.01);
+    }
+    .hero-image::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, transparent 55%, rgba(9,9,9,.7) 100%),
+        linear-gradient(180deg, transparent 55%, rgba(9,9,9,.85) 100%);
+    }
+    .hero-quote {
+      position: absolute;
+      z-index: 2;
+      left: 34px;
+      right: 34px;
+      bottom: 32px;
+    }
+    .hero-quote strong {
+      display: block;
+      font-family: var(--font-heading);
+      font-size: clamp(1.9rem, 3vw, 3.25rem);
+      line-height: 1.05;
+      margin-bottom: 10px;
+    }
+    .hero-quote span {
+      color: var(--gold);
+      font-size: .82rem;
+      font-weight: 700;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+    }
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--gold);
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .kicker::before { content: ''; width: 42px; height: 1px; background: var(--gold); }
+    .hero-copy h1 {
+      font-family: var(--font-heading);
+      font-size: clamp(3rem, 5.5vw, 5.8rem);
+      line-height: .96;
+      margin-bottom: 24px;
+    }
+    .hero-copy p {
+      max-width: 620px;
+      color: rgba(247,243,237,.72);
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: 26px;
+    }
+    .sync-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 16px;
+      border: 1px solid rgba(197,161,90,.28);
+      border-radius: 999px;
+      color: rgba(247,243,237,.78);
+      background: rgba(12,12,12,.72);
+      font-size: .84rem;
+      font-weight: 600;
+    }
+    .sync-badge i { color: var(--gold); }
+
+    .agenda-section {
+      padding: 90px 0 110px;
+      background:
+        radial-gradient(circle at 50% 0%, rgba(197,161,90,.07), transparent 28%),
+        linear-gradient(180deg, #0d0d0d 0%, #090909 100%);
+    }
+    .agenda-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 28px;
+      margin-bottom: 34px;
+    }
+    .agenda-head h2 {
+      font-family: var(--font-heading);
+      font-size: clamp(2.4rem, 4.5vw, 4.5rem);
+      line-height: 1;
+    }
+    .agenda-head p { color: rgba(247,243,237,.62); max-width: 520px; line-height: 1.7; }
+
+    .events-list { list-style: none; display: grid; gap: 18px; }
+    .event-card {
+      position: relative;
+      display: grid;
+      grid-template-columns: 116px minmax(0,1fr) auto;
+      gap: 24px;
+      align-items: center;
+      min-height: 160px;
+      padding: 24px;
+      border: 1px solid rgba(197,161,90,.24);
+      border-radius: 16px;
+      background: linear-gradient(135deg, rgba(21,21,21,.98), rgba(8,8,8,.98));
+      box-shadow: 0 16px 34px rgba(0,0,0,.3);
+      transition: .3s ease;
+    }
+    .event-card:hover { transform: translateY(-4px); border-color: rgba(197,161,90,.7); }
+    .event-card.is-next { border-color: rgba(197,161,90,.72); }
+    .next-badge {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 9px 16px;
+      border-radius: 0 15px 0 12px;
+      background: var(--gold);
+      color: var(--dark);
+      font-size: .75rem;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .date-box {
+      min-height: 108px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(197,161,90,.36);
+      border-radius: 13px;
+      background: rgba(5,5,5,.65);
+      text-align: center;
+    }
+    .date-box .weekday { color: var(--gold); font-size: .78rem; font-weight: 800; letter-spacing: .15em; text-transform: uppercase; }
+    .date-box .day { font-family: var(--font-heading); font-size: 2.8rem; line-height: .95; margin: 5px 0; }
+    .date-box .month { color: rgba(247,243,237,.64); font-size: .76rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+    .event-info { min-width: 0; }
+    .event-title { font-size: 1.25rem; line-height: 1.35; margin-bottom: 12px; padding-right: 84px; }
+    .event-meta { display: flex; flex-wrap: wrap; gap: 12px 20px; color: rgba(247,243,237,.68); }
+    .event-meta span { display: inline-flex; align-items: flex-start; gap: 9px; min-width: 0; }
+    .event-meta i { color: var(--gold); margin-top: 4px; }
+    .event-location { line-height: 1.6; }
+    .map-btn {
+      min-width: 166px;
+      min-height: 52px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      border: 1px solid var(--gold);
+      border-radius: 8px;
+      color: var(--gold);
+      background: transparent;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      font-size: .82rem;
+      font-weight: 800;
+      transition: .3s ease;
+    }
+    .map-btn:hover { background: var(--gold); color: var(--dark); }
+    .map-btn.is-disabled { opacity: .4; pointer-events: none; }
+
+    .status-card {
+      padding: 28px;
+      border: 1px solid rgba(197,161,90,.24);
+      border-radius: 14px;
+      background: rgba(17,17,17,.9);
+      color: rgba(247,243,237,.74);
+      text-align: center;
+    }
+    .status-card strong { display: block; color: var(--gold); margin-bottom: 8px; }
+
+    .cta-section {
+      padding: 80px 0;
+      border-top: 1px solid rgba(197,161,90,.14);
+      background: #0c0c0c;
+    }
+    .cta-box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+      padding: 36px;
+      border: 1px solid rgba(197,161,90,.28);
+      border-radius: 16px;
+      background: linear-gradient(135deg, rgba(22,22,22,.98), rgba(7,7,7,.98));
+    }
+    .cta-box h2 { font-family: var(--font-heading); font-size: clamp(2rem, 4vw, 3.5rem); margin-bottom: 8px; }
+    .cta-box p { color: rgba(247,243,237,.66); }
+
+    footer {
+      padding: 60px 0 28px;
+      border-top: 1px solid rgba(197,161,90,.25);
+      background: #050505;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .8fr 1.1fr;
+      gap: 52px;
+      align-items: start;
+    }
+    .footer-logo img { width: 84px; height: 84px; object-fit: contain; }
+    .footer-title { color: var(--gold); font-family: var(--font-heading); font-size: 1.35rem; margin: 14px 0 8px; }
+    .footer-muted { color: rgba(247,243,237,.55); line-height: 1.7; }
+    .footer-col h3 { color: var(--gold); font-family: var(--font-heading); margin-bottom: 18px; }
+    .footer-links { display: grid; gap: 11px; }
+    .footer-links a { color: rgba(247,243,237,.68); text-decoration: none; }
+    .footer-links a:hover { color: var(--gold); }
+    .footer-bottom {
+      margin-top: 42px;
+      padding-top: 22px;
+      border-top: 1px solid rgba(255,255,255,.06);
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      color: rgba(247,243,237,.42);
+      font-size: .8rem;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 42px; }
+      .hero-image { min-height: 430px; }
+      .agenda-head { align-items: flex-start; flex-direction: column; }
+      .event-card { grid-template-columns: 102px minmax(0,1fr); }
+      .map-btn { grid-column: 2; justify-self: start; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .footer-grid > :last-child { grid-column: span 2; }
+    }
+
+    @media (max-width: 620px) {
+      .container { width: min(100% - 28px, 1180px); }
+      .header-inner { min-height: 72px; }
+      .brand img { width: 54px; height: 54px; }
+      .header-actions .btn:first-child { display: none; }
+      .header-actions .btn { min-height: 44px; padding: 10px 14px; font-size: .72rem; }
+
+      .hero { padding: 54px 0 48px; }
+      .hero-grid { gap: 34px; }
+      .hero-image { min-height: 290px; border-radius: 15px; }
+      .hero-image img { object-position: 35% center; }
+      .hero-quote { left: 20px; right: 20px; bottom: 20px; }
+      .hero-quote strong { font-size: 1.7rem; }
+      .hero-quote span { font-size: .68rem; }
+      .hero-copy h1 { font-size: clamp(2.8rem, 15vw, 4rem); }
+      .hero-copy p { font-size: .96rem; }
+      .sync-badge { width: 100%; justify-content: center; text-align: center; border-radius: 12px; font-size: .76rem; }
+
+      .agenda-section { padding: 64px 0 76px; }
+      .agenda-head { margin-bottom: 24px; }
+      .events-list { gap: 13px; }
+      .event-card {
+        grid-template-columns: 84px minmax(0,1fr) 46px;
+        gap: 12px;
+        min-height: 116px;
+        padding: 15px 14px;
+        border-radius: 13px;
+      }
+      .next-badge { padding: 7px 10px; font-size: .64rem; border-radius: 0 12px 0 10px; }
+      .date-box { min-height: 86px; border-radius: 10px; }
+      .date-box .weekday { font-size: .65rem; }
+      .date-box .day { font-size: 2.15rem; }
+      .date-box .month { font-size: .63rem; }
+      .event-title {
+        padding-right: 0;
+        margin-bottom: 8px;
+        font-size: .98rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .event-meta { display: block; font-size: .8rem; }
+      .event-meta span { width: 100%; min-width: 0; }
+      .event-meta span + span { margin-top: 5px; }
+      .event-location {
+        display: block;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .map-btn {
+        grid-column: 3;
+        grid-row: 1;
+        align-self: center;
+        justify-self: end;
+        min-width: 44px;
+        width: 44px;
+        height: 44px;
+        min-height: 44px;
+        padding: 0;
+        border-radius: 50%;
+        font-size: 0;
+      }
+      .map-btn i { font-size: 1rem; }
+      .map-btn.is-disabled { display: none; }
+
+      .cta-section { padding: 60px 0; }
+      .cta-box { padding: 26px 20px; flex-direction: column; text-align: center; }
+      .cta-box .btn { width: 100%; }
+
+      footer { text-align: center; }
+      .footer-grid { grid-template-columns: 1fr; gap: 34px; }
+      .footer-grid > :last-child { grid-column: auto; }
+      .footer-bottom { flex-direction: column; align-items: center; }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Agenda de Shows de Ailton Souza",
+    "url": "https://www.ailtonsouza.com.br/agenda",
+    "description": "Próximos shows de Ailton Souza em Luziânia, Brasília, Goiás e região.",
+    "isPartOf": { "@type": "WebSite", "url": "https://www.ailtonsouza.com.br/" }
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <div class="container header-inner">
+      <a class="brand" href="/" aria-label="Voltar à página inicial">
+        <img src="https://i.postimg.cc/fyvQd66q/logo-as.png" alt="Ailton Souza">
+      </a>
+      <div class="header-actions">
+        <a class="btn" href="/"><i class="fas fa-arrow-left"></i> Voltar ao site</a>
+        <a class="btn btn-solid" href="https://wa.me/5561995840847?text=Ol%C3%A1%2C%20Ailton!%20Vi%20sua%20agenda%20e%20gostaria%20de%20consultar%20uma%20data." target="_blank"><i class="fab fa-whatsapp"></i> Contratar show</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-image">
+          <img src="https://i.postimg.cc/N0YBqmhc/Ailton-Sentando-caldas.png" alt="Ailton Souza em apresentação musical">
+          <div class="hero-quote">
+            <strong>Cada palco conta uma história.</strong>
+            <span>Espero você no próximo show</span>
+          </div>
+        </div>
+        <div class="hero-copy">
+          <span class="kicker">Agenda oficial</span>
+          <h1>Próximos<br>Shows</h1>
+          <p>Confira os próximos 10 eventos e encontre a melhor oportunidade para viver a experiência Ailton Souza ao vivo.</p>
+          <div class="sync-badge"><i class="fas fa-calendar-check"></i> Agenda atualizada automaticamente pelo Google Agenda</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="agenda-section">
+      <div class="container">
+        <div class="agenda-head">
+          <div>
+            <span class="kicker">Onde estarei cantando</span>
+            <h2>Agenda completa</h2>
+          </div>
+          <p>Os eventos abaixo são carregados automaticamente e aparecem em ordem cronológica.</p>
+        </div>
+
+        <ul id="dynamic-event-list" class="events-list" aria-live="polite">
+          <li class="status-card"><strong>Carregando agenda...</strong>Aguarde enquanto conectamos ao Google Agenda.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-box">
+          <div>
+            <h2>Quer levar esse show para o seu evento?</h2>
+            <p>Consulte disponibilidade, formatos e condições pelo atendimento comercial.</p>
+          </div>
+          <a class="btn btn-solid" href="https://wa.me/5561995840847?text=Ol%C3%A1%2C%20Ailton!%20Vi%20sua%20agenda%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento." target="_blank"><i class="fab fa-whatsapp"></i> Solicitar orçamento</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="/" class="footer-logo"><img src="https://i.postimg.cc/fyvQd66q/logo-as.png" alt="Logo Ailton Souza"></a>
+          <p class="footer-title">A música que marca momentos.</p>
+          <p class="footer-muted">Luziânia • Goiás</p>
+        </div>
+        <div class="footer-col">
+          <h3>Navegação</h3>
+          <div class="footer-links">
+            <a href="/">Página inicial</a>
+            <a href="/#formatos">Formatos de show</a>
+            <a href="/#galeria">Galeria</a>
+            <a href="/#contato">Contato</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h3>Atendimento comercial</h3>
+          <div class="footer-links">
+            <a href="https://wa.me/5561995840847" target="_blank"><i class="fab fa-whatsapp"></i> (61) 99584-0847</a>
+            <a href="mailto:cantorailtonsouza@gmail.com"><i class="fas fa-envelope"></i> cantorailtonsouza@gmail.com</a>
+            <a href="https://www.instagram.com/cantorailtonsouza/" target="_blank"><i class="fab fa-instagram"></i> @cantorailtonsouza</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Ailton Souza. Todos os direitos reservados.</p>
+        <p>Agenda oficial de shows</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const API_KEY = 'AIzaSyCraxjn4kA2Z-P3vvVwr_SHZAqTnGbkNaM';
+    const CALENDAR_ID = 'etb150ebv2gqid9rtt51u708m8@group.calendar.google.com';
+    const MAX_EVENTS = 10;
+    const eventList = document.getElementById('dynamic-event-list');
+
+    const escapeHTML = (value = '') => String(value).replace(/[&<>'"]/g, char => ({
+      '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;'
+    }[char]));
+
+    function eventDateValue(event) {
+      return event.start.dateTime || event.start.date || '';
+    }
+
+    function getDateParts(dateString) {
+      const allDay = dateString.length === 10;
+      const date = allDay ? new Date(dateString + 'T12:00:00') : new Date(dateString);
+      const weekday = date.toLocaleDateString('pt-BR', { weekday: 'short', timeZone: 'America/Sao_Paulo' }).replace('.', '').toUpperCase();
+      const day = date.toLocaleDateString('pt-BR', { day: '2-digit', timeZone: 'America/Sao_Paulo' });
+      const month = date.toLocaleDateString('pt-BR', { month: 'short', timeZone: 'America/Sao_Paulo' }).replace('.', '').toUpperCase();
+      return { weekday, day, month };
+    }
+
+    function formatTime(dateString) {
+      if (!dateString || dateString.length === 10) return 'Dia inteiro';
+      return new Date(dateString).toLocaleTimeString('pt-BR', {
+        hour: '2-digit', minute: '2-digit', hour12: false, timeZone: 'America/Sao_Paulo'
+      });
+    }
+
+    function mapsURL(location) {
+      return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(location)}`;
+    }
+
+    function renderEvent(event, index) {
+      const start = eventDateValue(event);
+      if (!start || event.status === 'cancelled' || event.visibility === 'private') return '';
+
+      const date = getDateParts(start);
+      const title = event.summary || 'Evento sem título';
+      const time = formatTime(start);
+      const location = event.location || 'Local a confirmar';
+      const hasLocation = Boolean(event.location);
+
+      return `
+        <li class="event-card ${index === 0 ? 'is-next' : ''}">
+          ${index === 0 ? '<span class="next-badge">Próximo show</span>' : ''}
+          <div class="date-box" aria-label="${escapeHTML(date.weekday)} ${escapeHTML(date.day)} de ${escapeHTML(date.month)}">
+            <span class="weekday">${escapeHTML(date.weekday)}</span>
+            <strong class="day">${escapeHTML(date.day)}</strong>
+            <span class="month">${escapeHTML(date.month)}</span>
+          </div>
+          <div class="event-info">
+            <h3 class="event-title">${escapeHTML(title)}</h3>
+            <div class="event-meta">
+              <span><i class="fas fa-clock"></i>${escapeHTML(time)}</span>
+              <span class="event-location"><i class="fas fa-map-marker-alt"></i>${escapeHTML(location)}</span>
+            </div>
+          </div>
+          ${hasLocation
+            ? `<a class="map-btn" href="${mapsURL(location)}" target="_blank" rel="noopener" aria-label="Como chegar em ${escapeHTML(location)}"><i class="fas fa-location-arrow"></i><span>Como chegar</span></a>`
+            : '<span class="map-btn is-disabled" aria-hidden="true"><i class="fas fa-location-arrow"></i><span>Como chegar</span></span>'}
+        </li>`;
+    }
+
+    async function fetchAndDisplayEvents() {
+      const now = new Date().toISOString();
+      const url = `https://www.googleapis.com/calendar/v3/calendars/${encodeURIComponent(CALENDAR_ID)}/events?key=${encodeURIComponent(API_KEY)}&timeMin=${encodeURIComponent(now)}&singleEvents=true&orderBy=startTime&maxResults=${MAX_EVENTS}`;
+
+      try {
+        const response = await fetch(url);
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        const data = await response.json();
+        const validEvents = (data.items || []).filter(event => eventDateValue(event) && event.status !== 'cancelled' && event.visibility !== 'private');
+
+        if (!validEvents.length) {
+          eventList.innerHTML = '<li class="status-card"><strong>Agenda em atualização</strong>Nenhum show público foi encontrado no momento.</li>';
+          return;
+        }
+
+        eventList.innerHTML = validEvents.slice(0, MAX_EVENTS).map(renderEvent).join('');
+      } catch (error) {
+        console.error('Erro ao carregar agenda:', error);
+        eventList.innerHTML = '<li class="status-card"><strong>Não foi possível carregar a agenda</strong>Tente novamente em alguns instantes ou consulte o atendimento comercial.</li>';
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', fetchAndDisplayEvents);
+  </script>
+</body>
+</html>
