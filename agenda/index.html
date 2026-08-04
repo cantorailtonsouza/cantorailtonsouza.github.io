@@ -98,22 +98,85 @@
     .hero {
       position: relative;
       overflow: hidden;
-      min-height: 76vh;
+      min-height: 680px;
       display: flex;
       align-items: center;
-      padding: 110px 0 78px;
+      padding: 78px 0;
       background:
-        linear-gradient(90deg, rgba(9,9,9,.98) 0%, rgba(9,9,9,.88) 40%, rgba(9,9,9,.34) 68%, rgba(9,9,9,.7) 100%),
-        url('https://i.postimg.cc/N0YBqmhc/Ailton-Sentando-caldas.png') center/cover no-repeat;
+        radial-gradient(circle at 74% 28%, rgba(197,161,90,.14), transparent 26%),
+        linear-gradient(135deg, #080808 0%, #11100e 48%, #090909 100%);
+      border-bottom: 1px solid rgba(197,161,90,.12);
     }
     .hero::before {
       content: '';
       position: absolute;
       inset: 0;
-      background:
-        radial-gradient(circle at 70% 35%, rgba(197,161,90,.14), transparent 28%),
-        linear-gradient(180deg, transparent 65%, #090909 100%);
       pointer-events: none;
+      background:
+        linear-gradient(90deg, rgba(255,255,255,.012) 1px, transparent 1px),
+        linear-gradient(rgba(255,255,255,.012) 1px, transparent 1px);
+      background-size: 46px 46px;
+      opacity: .20;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      right: 2%;
+      top: 8%;
+      width: 42vw;
+      height: 42vw;
+      max-width: 620px;
+      max-height: 620px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(197,161,90,.13), transparent 68%);
+      filter: blur(18px);
+      pointer-events: none;
+    }
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(360px, .96fr) minmax(430px, 1.04fr);
+      gap: clamp(44px, 6vw, 88px);
+      align-items: center;
+    }
+    .hero-visual {
+      position: relative;
+      min-height: 540px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(197,161,90,.28);
+      border-radius: 18px;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 38% 28%, rgba(197,161,90,.12), transparent 36%),
+        #060606;
+      box-shadow: 0 30px 72px rgba(0,0,0,.54), 0 0 34px rgba(197,161,90,.08);
+    }
+    .hero-visual::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(90deg, transparent 68%, rgba(9,9,9,.34) 100%),
+        linear-gradient(180deg, transparent 72%, rgba(9,9,9,.38) 100%);
+    }
+    .hero-visual img {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: 610px;
+      object-fit: contain;
+      object-position: center;
+      transform: scale(.985);
+      filter: saturate(.94) contrast(1.04) brightness(.93);
+      transition: transform .7s cubic-bezier(.2,.65,.25,1), filter .5s ease;
+    }
+    .hero-visual:hover img {
+      transform: scale(1.01);
+      filter: saturate(.98) contrast(1.05) brightness(.98);
     }
     .hero-content { position: relative; z-index: 1; max-width: 690px; }
     .kicker {
@@ -344,13 +407,25 @@
       .header-actions .btn { min-height: 44px; padding: 10px 14px; font-size: .72rem; }
 
       .hero {
-        min-height: 620px;
-        padding: 360px 0 48px;
-        align-items: flex-end;
-        background:
-          linear-gradient(180deg, rgba(9,9,9,.12) 0%, rgba(9,9,9,.1) 36%, rgba(9,9,9,.72) 58%, #090909 85%),
-          url('https://i.postimg.cc/N0YBqmhc/Ailton-Sentando-caldas.png') 25% top/auto 390px no-repeat;
+        min-height: auto;
+        padding: 34px 0 52px;
       }
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 34px;
+      }
+      .hero-visual {
+        min-height: 0;
+        width: 100%;
+        border-radius: 14px;
+      }
+      .hero-visual img {
+        width: 100%;
+        max-height: none;
+        transform: none;
+      }
+      .hero-visual:hover img { transform: none; }
+      .hero-content { max-width: none; }
       .hero h1 { font-size: clamp(3rem, 16vw, 4.6rem); }
       .hero p { font-size: .95rem; }
       .hero-badges { flex-direction: column; }
@@ -420,13 +495,21 @@
 
   <main>
     <section class="hero">
-      <div class="container hero-content">
-        <span class="kicker">Agenda oficial</span>
-        <h1>Agenda de<br>Shows</h1>
-        <p>Confira as próximas apresentações e encontre a melhor oportunidade para viver a experiência Ailton Souza ao vivo.</p>
-        <div class="hero-badges">
-          <div class="sync-badge"><i class="fas fa-calendar-check"></i> Atualizada automaticamente pelo Google Agenda</div>
-          <div class="count-badge"><i class="fas fa-microphone-alt"></i> <span id="event-count">Próximos shows confirmados</span></div>
+      <div class="container hero-grid">
+        <div class="hero-visual">
+          <img src="https://i.postimg.cc/N0YBqmhc/Ailton-Sentando-caldas.png"
+               alt="Ailton Souza cantando e tocando violão em apresentação ao vivo"
+               fetchpriority="high">
+        </div>
+
+        <div class="hero-content">
+          <span class="kicker">Agenda oficial</span>
+          <h1>Agenda de<br>Shows</h1>
+          <p>Confira as próximas apresentações e encontre a melhor oportunidade para viver a experiência Ailton Souza ao vivo.</p>
+          <div class="hero-badges">
+            <div class="sync-badge"><i class="fas fa-calendar-check"></i> Atualizada automaticamente pelo Google Agenda</div>
+            <div class="count-badge"><i class="fas fa-microphone-alt"></i> <span id="event-count">Próximos shows confirmados</span></div>
+          </div>
         </div>
       </div>
     </section>
