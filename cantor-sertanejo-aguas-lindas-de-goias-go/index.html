@@ -132,6 +132,16 @@ footer{padding:36px 0;text-align:center;color:rgba(247,243,237,.48);border-top:1
 footer a{color:var(--gold);text-decoration:none}
 @media(max-width:850px){.grid{grid-template-columns:1fr}.format-list{grid-template-columns:1fr}.hero{min-height:700px;background:linear-gradient(180deg,rgba(9,9,9,.10) 0%,rgba(9,9,9,.28) 35%,rgba(9,9,9,.92) 66%,#090909 100%),url('../images/FOTO-DO-SITE.webp') 70% top/auto 55% no-repeat,#090909}.hero-content{padding:390px 0 56px}.actions .btn{width:100%}}
 @media(max-width:520px){.container{width:min(100% - 28px,1140px)}section{padding:68px 0}.top{min-height:70px}.logo img{width:54px;height:54px}.back{padding:10px 13px;font-size:.82rem}}
+
+.city-links{padding:52px 0;background:#0a0a0a;border-top:1px solid rgba(197,161,90,.14)}
+.city-links-inner{max-width:900px;margin:auto;text-align:center}
+.city-links h2{margin:0 0 10px;font-size:clamp(1.75rem,3vw,2.45rem);color:var(--text)}
+.city-links p{margin:0 auto 22px;max-width:720px;color:var(--muted);font-size:.94rem}
+.city-links-list{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+.city-links-list a{display:inline-flex;padding:9px 13px;border:1px solid rgba(197,161,90,.28);border-radius:999px;color:var(--gold);text-decoration:none;font-size:.84rem;transition:.25s}
+.city-links-list a:hover{background:var(--gold);color:#090909}
+@media(max-width:520px){.city-links{padding:44px 0}.city-links-list{gap:8px}.city-links-list a{font-size:.79rem;padding:8px 11px}}
+
 </style>
 </head>
 <body>
@@ -216,6 +226,23 @@ footer a{color:var(--gold);text-decoration:none}
     </div>
   </div>
 </section>
+
+<section class="city-links" aria-labelledby="city-links-title">
+  <div class="container">
+    <div class="city-links-inner">
+      <h2 id="city-links-title">Ailton Souza também atende</h2>
+      <p>Conheça outras cidades e regiões atendidas para shows, casamentos e eventos.</p>
+      <div class="city-links-list">
+        <a href="/cantor-sertanejo-brasilia-df/">Brasília</a>
+        <a href="/cantor-sertanejo-santo-antonio-do-descoberto-go/">Santo Antônio do Descoberto</a>
+        <a href="/cantor-sertanejo-cidade-ocidental-valparaiso-novo-gama/">Cidade Ocidental, Valparaíso e Novo Gama</a>
+        <a href="/cantor-sertanejo-luziania-go/">Luziânia</a>
+        <a href="/cantor-sertanejo-formosa-go/">Formosa</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 </main>
 
 <footer>
