@@ -12,4 +12,15 @@
       <news:title>Ailton Souza reforça atuação em casamentos e eventos corporativos em Goiás e no DF</news:title>
     </news:news>
   </url>
+  <url>
+    <loc>https://ailtonsouza.com.br/noticias/ailton-souza-destaca-valorizacao-artista-claque-cultural-caldas-novas/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Ailton Souza</news:name>
+        <news:language>pt</news:language>
+      </news:publication>
+      <news:publication_date>2026-10-19T18:40:00-03:00</news:publication_date>
+      <news:title>Ailton Souza destaca valorização do artista no Claque Cultural, em Caldas Novas</news:title>
+    </news:news>
+  </url>
 </urlset>
